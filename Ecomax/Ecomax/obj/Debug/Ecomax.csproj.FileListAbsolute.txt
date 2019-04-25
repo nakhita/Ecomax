@@ -1,0 +1,13 @@
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Ecomax.csprojAssemblyReference.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Supermercado.Login.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Supermercado.Pantalla_caja.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Ecomax.csproj.GenerateResource.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Ecomax.csproj.CoreCompileInputs.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Ecomax.csproj.CopyComplete
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\bin\Debug\Ecomax.exe
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\bin\Debug\Ecomax.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Ecomax.Properties.Resources.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Ecomax.exe
+D:\Universidad\Tecnicas de programacion\Proyecto\Supermercado\Supermercado\obj\Debug\Ecomax.pdb
