@@ -7,30 +7,27 @@ namespace Ecomax
 {
     class CajaControlador : Controlador
     {
-        
-        //private string vacio = "";
-        private double precio;
-        private string Nombre_Empleado = "";
-        int ID_scr;
-        public double ObtenerPrecio(int art,int ID_scr)
-        {
 
+
+        
+        public string[] ObtenerPrecio(int art,int ID_scr,int cant)
+        {
+            string[] datos_vector = null;
             if (art != 0)
             {
-                precio = C_BD.cs_precio(art,ID_scr);
+                datos_vector = new string[2];
+                datos_vector = C_BD.cs_precio(art,ID_scr);
             }
-            return precio;
+            return datos_vector;
         }
-        public int ObtenerSucursal(int usuario)
-        {
-            ID_scr = C_BD.cs_IDsucursal(usuario);
-            return ID_scr;
+        public double PrecioXcant(double precio, int cant) {
+            double T_precio= precio * cant;
+            return T_precio;
         }
 
-        public string ObtenerNombre_Empleado(int usuario)
-        {
-            Nombre_Empleado = C_BD.cs_NombreEmp(usuario);
-            return Nombre_Empleado;
+        public double Total(double suma, double item) {
+            suma = suma + item;
+            return suma;
         }
 
     }
