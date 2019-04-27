@@ -45,7 +45,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.boxArt = new System.Windows.Forms.TextBox();
             this.boxCant = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelCaja = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
+            this.labelEmpleado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.boxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -248,16 +249,16 @@
             this.boxCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
-            // label9
+            // labelCaja
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("barcode font", 80.24999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(677, 91);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 108);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Caja 2";
+            this.labelCaja.AutoSize = true;
+            this.labelCaja.BackColor = System.Drawing.Color.White;
+            this.labelCaja.Font = new System.Drawing.Font("barcode font", 80.24999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCaja.Location = new System.Drawing.Point(689, 91);
+            this.labelCaja.Name = "labelCaja";
+            this.labelCaja.Size = new System.Drawing.Size(117, 108);
+            this.labelCaja.TabIndex = 0;
+            this.labelCaja.Text = "Caja";
             // 
             // listBox1
             // 
@@ -369,12 +370,24 @@
             this.listBox5.Size = new System.Drawing.Size(108, 459);
             this.listBox5.TabIndex = 0;
             // 
+            // labelEmpleado
+            // 
+            this.labelEmpleado.AutoSize = true;
+            this.labelEmpleado.Font = new System.Drawing.Font("Century Gothic", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmpleado.Location = new System.Drawing.Point(245, 9);
+            this.labelEmpleado.Name = "labelEmpleado";
+            this.labelEmpleado.Size = new System.Drawing.Size(323, 39);
+            this.labelEmpleado.TabIndex = 0;
+            this.labelEmpleado.Text = "No me pierdo mas";
+            this.labelEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Pantalla_caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(164)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(872, 566);
+            this.Controls.Add(this.labelEmpleado);
             this.Controls.Add(this.listBox5);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
@@ -385,7 +398,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labelCaja);
             this.Controls.Add(this.boxCant);
             this.Controls.Add(this.boxArt);
             this.Controls.Add(this.label8);
@@ -402,6 +415,7 @@
             this.Name = "Pantalla_caja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pantalla_caja";
+            this.Shown += new System.EventHandler(this.Pantalla_caja_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.boxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -426,7 +440,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox boxArt;
         private System.Windows.Forms.TextBox boxCant;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelCaja;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -437,5 +451,6 @@
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.Label labelEmpleado;
     }
 }

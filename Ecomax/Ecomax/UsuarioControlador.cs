@@ -10,32 +10,33 @@ namespace Ecomax
     {
         
         private string vacio = "";
-        
-        
-        public int ObtenerUsuario(string usuario, string password){
-            int categoria;
-            
-            if (usuario != vacio && password != vacio){
-                categoria = U_BD.autentificacion(usuario, password);
 
-                User_datos datos = U_BD.obtenerDatosUsuario();
 
-                User_global.DATOS = datos;
-
-                return categoria;
-            }
-            else {
-                return -1;
-            }
-        }
-
-        public void ObtenerDatosEmpleado(int usuario)
+        public int ObtenerUsuario(string usuario, string password)
         {
-            User_datos datos = U_BD.obtenerDatosUsuario();
+            try
+            {
+                if (usuario != vacio && password != vacio)
+                {
+                    UserDatos datos = U_BD.autentificacion(usuario, password);
+                    if (datos != null)
+                    {
+                        UserGlobal.DATOS = datos;
+                        return 1;
+                    }
+                    else if (datos == null) {
+                        return -1;
+                    } 
+                }
 
-            User_global.DATOS = datos;
-        }
-
-
+                
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
+                UserGlobal.DATOS.Categoria = 9999;
+                
+            }
+            return 0;
+        }       
     }
 }

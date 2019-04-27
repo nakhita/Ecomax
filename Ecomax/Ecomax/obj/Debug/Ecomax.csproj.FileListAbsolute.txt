@@ -24,3 +24,4 @@ D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\bin\Debug\Microso
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.csproj.CopyComplete
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Login.resources
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Pantalla_caja.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Numb_caja.resources

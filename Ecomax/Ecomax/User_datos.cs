@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Ecomax
 {
-    class User_datos
+    class UserDatos
     {
         public int ID_scr;
         public string Nombre;
         public string Apellido;
-        public int categoria;
+        public int Categoria;
     }
 }

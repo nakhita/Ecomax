@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Ecomax
 {
-    class User_global
+    class UserGlobal
     {
-        public static User_datos DATOS;
+        public static UserDatos DATOS;
     }
 }

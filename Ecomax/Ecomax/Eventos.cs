@@ -10,9 +10,10 @@ namespace Ecomax
 {
     class Eventos
     {
+        //int num;
         public int xClick = 0, yClick = 0;
         private Form form;
-        private int key=0;
+        private int key;
 
         public Eventos(Form form)
         {
@@ -25,6 +26,7 @@ namespace Ecomax
             String texto = box.Text;
             return texto;
         }
+       
 
         public void cartel(string palabra)
         {
@@ -87,6 +89,7 @@ namespace Ecomax
         }
         /**/
         public int Key_press_global(object sender, KeyPressEventArgs e) {
+            key = 0;
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 key = 1;
