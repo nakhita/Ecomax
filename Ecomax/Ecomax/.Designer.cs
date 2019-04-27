@@ -1,4 +1,4 @@
-﻿namespace Supermercado
+﻿namespace Ecomax
 {
     partial class Pantalla_caja
     {
@@ -145,7 +145,7 @@
             this.label2.Location = new System.Drawing.Point(712, 389);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 0;
             this.label2.Text = "TOTAL";
             // 
             // label5
@@ -158,7 +158,7 @@
             this.label5.Location = new System.Drawing.Point(643, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 53);
-            this.label5.TabIndex = 7;
+            this.label5.TabIndex = 0;
             this.label5.Text = "$";
             // 
             // label3
@@ -171,7 +171,7 @@
             this.label3.Location = new System.Drawing.Point(644, 390);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 53);
-            this.label3.TabIndex = 8;
+            this.label3.TabIndex = 0;
             this.label3.Text = "$";
             // 
             // label4
@@ -207,7 +207,7 @@
             this.label7.Location = new System.Drawing.Point(662, 233);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 20);
-            this.label7.TabIndex = 11;
+            this.label7.TabIndex = 0;
             this.label7.Text = "ARTICULO";
             // 
             // label8
@@ -219,7 +219,7 @@
             this.label8.Location = new System.Drawing.Point(662, 276);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 20);
-            this.label8.TabIndex = 12;
+            this.label8.TabIndex = 0;
             this.label8.Text = "CANTIDAD";
             // 
             // boxArt
@@ -261,12 +261,13 @@
             // 
             // listBox1
             // 
+            this.listBox1.Enabled = false;
             this.listBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(26, 91);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(73, 459);
-            this.listBox1.TabIndex = 13;
+            this.listBox1.TabIndex = 0;
             // 
             // label11
             // 
@@ -277,7 +278,7 @@
             this.label11.Location = new System.Drawing.Point(22, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 20);
-            this.label11.TabIndex = 15;
+            this.label11.TabIndex = 0;
             this.label11.Text = "N ° ART.";
             // 
             // label10
@@ -289,7 +290,7 @@
             this.label10.Location = new System.Drawing.Point(158, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(123, 20);
-            this.label10.TabIndex = 16;
+            this.label10.TabIndex = 0;
             this.label10.Text = "DESCRIPCION";
             // 
             // label12
@@ -301,7 +302,7 @@
             this.label12.Location = new System.Drawing.Point(427, 68);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 20);
-            this.label12.TabIndex = 17;
+            this.label12.TabIndex = 0;
             this.label12.Text = "CANTIDAD";
             // 
             // label13
@@ -313,7 +314,7 @@
             this.label13.Location = new System.Drawing.Point(339, 68);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 20);
-            this.label13.TabIndex = 18;
+            this.label13.TabIndex = 0;
             this.label13.Text = "$xUNIDAD";
             // 
             // label14
@@ -325,44 +326,48 @@
             this.label14.Location = new System.Drawing.Point(545, 68);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 20);
-            this.label14.TabIndex = 19;
+            this.label14.TabIndex = 0;
             this.label14.Text = "TOTAL";
             // 
             // listBox2
             // 
+            this.listBox2.Enabled = false;
             this.listBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(96, 91);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(252, 459);
-            this.listBox2.TabIndex = 20;
+            this.listBox2.TabIndex = 0;
             // 
             // listBox3
             // 
+            this.listBox3.Enabled = false;
             this.listBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(343, 91);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(93, 459);
-            this.listBox3.TabIndex = 21;
+            this.listBox3.TabIndex = 0;
             // 
             // listBox4
             // 
+            this.listBox4.Enabled = false;
             this.listBox4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox4.FormattingEnabled = true;
             this.listBox4.Location = new System.Drawing.Point(431, 91);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(93, 459);
-            this.listBox4.TabIndex = 22;
+            this.listBox4.TabIndex = 0;
             // 
             // listBox5
             // 
+            this.listBox5.Enabled = false;
             this.listBox5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox5.FormattingEnabled = true;
             this.listBox5.Location = new System.Drawing.Point(520, 91);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(108, 459);
-            this.listBox5.TabIndex = 23;
+            this.listBox5.TabIndex = 0;
             // 
             // Pantalla_caja
             // 

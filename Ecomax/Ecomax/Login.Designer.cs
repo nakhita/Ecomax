@@ -1,4 +1,4 @@
-﻿namespace Supermercado
+﻿namespace Ecomax
 {
     partial class Login
     {

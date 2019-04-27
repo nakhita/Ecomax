@@ -7,23 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Supermercado
+namespace Ecomax
 {
     public partial class Pantalla_caja : Form
     {
         Eventos E;
-        UsuarioControlador BD;
+        CajaControlador BD;
+        
         public Pantalla_caja()
         {
             InitializeComponent();
             E = new Eventos(this);
-            BD = new UsuarioControlador();
+            BD = new CajaControlador();
         }
         private void articulo_click() {
             int art = int.Parse(E.obtener_datos_text(boxArt));
             int cant = int.Parse(E.obtener_datos_text(boxCant));
-            
+            double precio= BD.ObtenerPrecio(art, User_global.DATOS.ID_scr);
 
+            E.cartel(precio.ToString());
 
         }
         private void Key_Press(object sender, KeyPressEventArgs e)

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 
 
-namespace Supermercado
+namespace Ecomax
 {
     class Eventos
     {
@@ -18,6 +18,7 @@ namespace Supermercado
         {
             this.form = form;
         }
+        
 
         public string obtener_datos_text(System.Windows.Forms.TextBox box)
         {

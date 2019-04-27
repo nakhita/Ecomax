@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Supermercado
+namespace Ecomax
 {
-    class UsuarioControlador: Controlador
+
+    class UsuarioControlador : Controlador
     {
         
         private string vacio = "";
-        private string datos;
+        
+        
         public int ObtenerUsuario(string usuario, string password){
             int categoria;
             
             if (usuario != vacio && password != vacio){
-                categoria = conexion.autentificacion(usuario, password);
+                categoria = U_BD.autentificacion(usuario, password);
+
+                User_datos datos = U_BD.obtenerDatosUsuario();
+
+                User_global.DATOS = datos;
 
                 return categoria;
             }
@@ -23,6 +29,13 @@ namespace Supermercado
             }
         }
 
-        
+        public void ObtenerDatosEmpleado(int usuario)
+        {
+            User_datos datos = U_BD.obtenerDatosUsuario();
+
+            User_global.DATOS = datos;
+        }
+
+
     }
 }
