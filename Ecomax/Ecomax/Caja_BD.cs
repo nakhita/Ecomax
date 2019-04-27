@@ -11,10 +11,6 @@ namespace Ecomax
 {
     class Caja_BD : conexion_BD
     {
-        private int ID_scr;
-        private string Nombre_empleado;
-
-
         public string[] cs_precio(int art, int ID_scr)
         {
 

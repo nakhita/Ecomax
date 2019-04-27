@@ -25,10 +25,28 @@ namespace Ecomax
             return T_precio;
         }
 
-        public double Total(double suma, double item) {
+        public double TotalSuma(double suma, double item) {
             suma = suma + item;
             return suma;
         }
-
+        public double TotalResta(double resta, double item)
+        {
+            resta = resta - item;
+            return resta;
+        }
+        public int RestarCant(int resta, int num) {
+            resta = resta - num;
+            return resta;
+        }
+        public int Positivo(int num) {
+            num = num * -1; // lo convierto en Positivo
+            return num;
+        }
+        public int Encontro(int num, List<int> lista ) {
+            int pos ;
+            
+            pos = lista.IndexOf(num);
+            return pos;
+        }
     }
 }
