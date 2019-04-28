@@ -50,6 +50,12 @@
     <Compile Include="Caja_BD.cs" />
     <Compile Include="conexion_BD.cs" />
     <Compile Include="Controlador.cs" />
+    <Compile Include="Modo_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modo_Pago.Designer.cs">
+      <DependentUpon>Modo_Pago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Numb_caja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Usuario_BD.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modo_Pago.resx">
+      <DependentUpon>Modo_Pago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numb_caja.resx">
       <DependentUpon>Numb_caja.cs</DependentUpon>

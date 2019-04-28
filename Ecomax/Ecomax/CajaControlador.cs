@@ -48,5 +48,13 @@ namespace Ecomax
             pos = lista.IndexOf(num);
             return pos;
         }
+        public bool CompararLetra(string letra) {
+            string punto = ".";
+            if (letra == punto) {
+                return true;
+            }
+            return false;
+
+        }
     }
 }

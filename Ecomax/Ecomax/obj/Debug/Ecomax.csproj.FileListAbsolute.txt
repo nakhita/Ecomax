@@ -25,3 +25,4 @@ D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Login.resources
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Pantalla_caja.resources
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Numb_caja.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Modo_Pago.resources

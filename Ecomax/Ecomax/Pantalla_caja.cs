@@ -14,8 +14,12 @@ namespace Ecomax
         private double Total=0;
         Eventos E;
         CajaControlador C_BD;
-        int Caja;
-        List<int> lista = new List<int>();
+        Modo_Pago M_pago;
+        private int Caja;
+        private int cantidad_registros;
+        private List<int> lista = new List<int>();
+        object[] registro;
+        object[] Cantidad_descontar;
 
 
         public Pantalla_caja()
@@ -23,6 +27,7 @@ namespace Ecomax
             InitializeComponent();
             E = new Eventos(this);
             C_BD = new CajaControlador();
+            M_pago = new Modo_Pago();
 
 
         }
@@ -31,9 +36,8 @@ namespace Ecomax
              * listBox2 = descripcion;
              * listBox3 = precio;
              * listBox4 = cantidad
-             * listBox5 = precio total */
+             * listBox5 = precio Total */
             int pos = C_BD.Encontro(art,lista);
-            E.cartel(pos.ToString());
             double n_precio=0;
             if (pos >= 0)
             {
@@ -66,11 +70,6 @@ namespace Ecomax
             listBox5.Items.Remove(listBox5.Items[cont]);
         }
         private void modificar(int art, int cant) {
-            /* listBox1 = Art;
-             * listBox2 = descripcion;
-             * listBox3 = precio;
-             * listBox4 = cantidad
-             * listBox5 = precio total */
             int pos = C_BD.Encontro(art, lista); 
             cant = C_BD.Positivo(cant);
             if (pos >= 0)
@@ -113,35 +112,45 @@ namespace Ecomax
                 
                 string descripcion = "";
                 double precio = 0;
-                int art = int.Parse(E.obtener_datos_text(boxArt));
-                int cant = int.Parse(E.obtener_datos_text(boxCant));
-                int pos = C_BD.Encontro(art, lista);
-                if (cant != 0)
+                bool IsLetra = C_BD.CompararLetra(E.obtener_datos_text(boxArt));
+                if (IsLetra)
                 {
-                    if (cant > 0)
-                    {
-                        string[] aux = C_BD.ObtenerPrecio(art, UserGlobal.DATOS.ID_scr, cant);
-                        descripcion = aux[0]; // descripcion
-                        precio = Convert.ToDouble(aux[1]); // precio
-
-                        if (precio <= 0)
-                        {
-                            E.cartel("Error: No existe articulo");
-                        }
-                        else if (precio > 0)
-                        {
-                            Agregar(art, descripcion, precio, cant);
-                        }
-
-                    }
-                    else if (cant < 0)
-                    {
-                        modificar(art, cant);
-                    }
+                    long ticket = Convert.ToInt64(DateTime.Now.ToString("yyMMddhhmmssff"));
+                    RegistrarVenta(ticket, Convert.ToDouble(boxTotal.Text));
+                    M_pago.Show();
+                    
                 }
-                else {
-                    if (cant == 0) {
-                       E.cartel("Error: Cantidad no puede ser 0");
+                else if(!IsLetra)
+                {
+                    int art = int.Parse(E.obtener_datos_text(boxArt));
+                    int cant = int.Parse(E.obtener_datos_text(boxCant));
+                    int pos = C_BD.Encontro(art, lista);
+                    if (cant != 0)
+                    {
+                        if (cant > 0)
+                        {
+                            string[] aux = C_BD.ObtenerPrecio(art, UserGlobal.DATOS.ID_scr, cant);
+                            descripcion = aux[0]; // descripcion
+                            precio = Convert.ToDouble(aux[1]); // precio
+
+                            if (precio <= 0)
+                            {
+                                E.cartel("Error: No existe articulo");
+                            }
+                            else if (precio > 0)
+                            {
+                                Agregar(art, descripcion, precio, cant);
+                            }
+
+                        }
+                        else if (cant < 0)
+                        {
+                            modificar(art, cant);
+                        }
+                    }
+                    else if (cant == 0)
+                    {
+                        E.cartel("Error: Cantidad no puede ser 0");
                     }
                 }
             }
@@ -149,14 +158,56 @@ namespace Ecomax
                 Console.WriteLine(ex);
                E.cartel("Error al escribir articulo o cantidad");
                 
-            }
+            } 
+        }
+        
+        public void set_caja(int n_caja) {
+            Caja = n_caja;
+        }
 
-            
+        public int set_cant()
+        {
+            return cantidad_registros;
+        }
+        public void CantAdescontar(int cant) {
+            Cantidad_descontar = new object[cant];
+            for (int i = 0; i < cant; i++) {
+                Cantidad_descontar[i] = Convert.ToInt32(listBox4.Items[i]);
+                E.cartel(Cantidad_descontar[i].ToString());
+            }
             
         }
+        public void RegistrarVenta(long ticket,double total) {
+            int cant = lista.Count();
+            cantidad_registros = cant + 2;
+            registro = new object[cantidad_registros];
+            registro[0]= ticket;
+            registro[1]= total;
+            for (int i = 0; i < cant; i++) {
+                registro[i + 2] = lista[i];
+            }
+            CantAdescontar(cant);
+            
+        }
+        public object[] Ob_registrarVenta()
+        {
+            return registro;
+        }
+        public object[] Ob_DescuentaCantidad()
+        {
+            return Cantidad_descontar;
+        }
+        private void limpiar() {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            listBox5.Items.Clear();
+        }
+
         private void Key_Press(object sender, KeyPressEventArgs e)
         {
-            string vacio="";
+            string vacio = "";
             int key = E.Key_press_global(sender, e);
             if (key == 1)
             {
@@ -168,30 +219,38 @@ namespace Ecomax
                     boxCant.Text = "1";
 
                 }
-                else if(boxArt.Focused)
+                else if (boxArt.Focused)
                 {
-                    
-                    string art;
-                    art= E.obtener_datos_text(boxArt);
 
-                    if (art== vacio) {
+                    string art;
+                    art = E.obtener_datos_text(boxArt);
+
+                    if (art == vacio)
+                    {
                         boxArt.Text = "0";
                     }
                     E.tab(sender, e);
-                    
+
                 }
             }
-            
+
         }
-        public void set_caja(int n_caja) {
-            Caja = n_caja;
+        private void Mover(object sender, MouseEventArgs e)
+        {
+            E.Mover_pantalla(sender, e);
         }
+
         private void Pantalla_caja_Shown(object sender, EventArgs e)
         {
 
-
+            
             labelCaja.Text = "Caja " + Caja.ToString();
+            limpiar();
+            Total = 0;
+            boxStotal.Text = "0.00";
+            boxTotal.Text = "0.00";
             labelEmpleado.Text = UserGlobal.DATOS.Apellido + " " +UserGlobal.DATOS.Nombre;
         }
+
     }
 }
