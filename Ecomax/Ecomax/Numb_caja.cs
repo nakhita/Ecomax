@@ -37,7 +37,7 @@ namespace Ecomax
                         {
                             boxCaja.Text = "";
                         }
-                        else
+                        else if(n_caja > 0  && n_caja <= 5)
                         {
                             pj.set_caja(n_caja);
                             E.Abrir_otroForm(sender, e, pj);

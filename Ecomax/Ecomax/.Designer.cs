@@ -119,7 +119,7 @@
             this.boxLogo.Image = ((System.Drawing.Image)(resources.GetObject("boxLogo.Image")));
             this.boxLogo.Location = new System.Drawing.Point(1506, 784);
             this.boxLogo.Name = "boxLogo";
-            this.boxLogo.Size = new System.Drawing.Size(370, 293);
+            this.boxLogo.Size = new System.Drawing.Size(367, 293);
             this.boxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.boxLogo.TabIndex = 1;
             this.boxLogo.TabStop = false;

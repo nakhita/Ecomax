@@ -56,6 +56,7 @@
     <Compile Include="Modo_Pago.Designer.cs">
       <DependentUpon>Modo_Pago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modo_PagoControlador.cs" />
     <Compile Include="Numb_caja.cs">
       <SubType>Form</SubType>
     </Compile>

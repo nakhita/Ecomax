@@ -28,6 +28,7 @@ namespace Ecomax
             E = new Eventos(this);
             C_BD = new CajaControlador();
             M_pago = new Modo_Pago();
+            M_pago.setPantalla_caja(this);
 
 
         }

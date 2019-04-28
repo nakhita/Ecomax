@@ -47,11 +47,13 @@
             // 
             this.boxCaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.boxCaja.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxCaja.ForeColor = System.Drawing.Color.Peru;
             this.boxCaja.Location = new System.Drawing.Point(84, 112);
             this.boxCaja.Multiline = true;
             this.boxCaja.Name = "boxCaja";
             this.boxCaja.Size = new System.Drawing.Size(98, 72);
             this.boxCaja.TabIndex = 1;
+            this.boxCaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxCaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
             // Numb_caja

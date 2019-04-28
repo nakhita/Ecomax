@@ -63,7 +63,7 @@
             this.label2.Location = new System.Drawing.Point(40, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 23);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "1. Efectivo ";
             // 
             // label3
@@ -74,7 +74,7 @@
             this.label3.Location = new System.Drawing.Point(207, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(193, 23);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 0;
             this.label3.Text = "2. Tarjeta Credito";
             // 
             // label4
@@ -85,16 +85,19 @@
             this.label4.Location = new System.Drawing.Point(435, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 23);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 0;
             this.label4.Text = "3. Tarjeta Debito";
             // 
             // boxModoPago
             // 
+            this.boxModoPago.Font = new System.Drawing.Font("Century Gothic", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxModoPago.Location = new System.Drawing.Point(246, 225);
             this.boxModoPago.Multiline = true;
             this.boxModoPago.Name = "boxModoPago";
             this.boxModoPago.Size = new System.Drawing.Size(117, 45);
-            this.boxModoPago.TabIndex = 4;
+            this.boxModoPago.TabIndex = 1;
+            this.boxModoPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxModoPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
             // labelPago_tarjeta
             // 
@@ -104,18 +107,21 @@
             this.labelPago_tarjeta.Location = new System.Drawing.Point(32, 303);
             this.labelPago_tarjeta.Name = "labelPago_tarjeta";
             this.labelPago_tarjeta.Size = new System.Drawing.Size(311, 23);
-            this.labelPago_tarjeta.TabIndex = 7;
+            this.labelPago_tarjeta.TabIndex = 0;
             this.labelPago_tarjeta.Text = "Ingrese N° de comprobante";
             this.labelPago_tarjeta.Visible = false;
             // 
             // boxTarjVuelto
             // 
+            this.boxTarjVuelto.Font = new System.Drawing.Font("Century Gothic", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxTarjVuelto.Location = new System.Drawing.Point(367, 285);
             this.boxTarjVuelto.Multiline = true;
             this.boxTarjVuelto.Name = "boxTarjVuelto";
             this.boxTarjVuelto.Size = new System.Drawing.Size(233, 43);
-            this.boxTarjVuelto.TabIndex = 8;
+            this.boxTarjVuelto.TabIndex = 2;
+            this.boxTarjVuelto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxTarjVuelto.Visible = false;
+            this.boxTarjVuelto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
             // label5
             // 
@@ -125,7 +131,7 @@
             this.label5.Location = new System.Drawing.Point(180, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 33);
-            this.label5.TabIndex = 9;
+            this.label5.TabIndex = 0;
             this.label5.Text = "TOTAL $";
             // 
             // labelPrecio_total
@@ -136,7 +142,7 @@
             this.labelPrecio_total.Location = new System.Drawing.Point(327, 92);
             this.labelPrecio_total.Name = "labelPrecio_total";
             this.labelPrecio_total.Size = new System.Drawing.Size(118, 33);
-            this.labelPrecio_total.TabIndex = 10;
+            this.labelPrecio_total.TabIndex = 0;
             this.labelPrecio_total.Text = "PRECIO";
             // 
             // labelPago_efectivo
@@ -144,10 +150,10 @@
             this.labelPago_efectivo.AutoSize = true;
             this.labelPago_efectivo.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPago_efectivo.ForeColor = System.Drawing.Color.White;
-            this.labelPago_efectivo.Location = new System.Drawing.Point(32, 285);
+            this.labelPago_efectivo.Location = new System.Drawing.Point(32, 303);
             this.labelPago_efectivo.Name = "labelPago_efectivo";
             this.labelPago_efectivo.Size = new System.Drawing.Size(304, 46);
-            this.labelPago_efectivo.TabIndex = 11;
+            this.labelPago_efectivo.TabIndex = 0;
             this.labelPago_efectivo.Text = "Ingrese con cuanto paga $\r\n\r\n";
             this.labelPago_efectivo.Visible = false;
             // 
@@ -159,7 +165,7 @@
             this.pago_efectivo2.Location = new System.Drawing.Point(159, 366);
             this.pago_efectivo2.Name = "pago_efectivo2";
             this.pago_efectivo2.Size = new System.Drawing.Size(141, 33);
-            this.pago_efectivo2.TabIndex = 12;
+            this.pago_efectivo2.TabIndex = 0;
             this.pago_efectivo2.Text = "VUELTO $";
             this.pago_efectivo2.Visible = false;
             // 
@@ -171,7 +177,7 @@
             this.labelPrecio_vuelto.Location = new System.Drawing.Point(318, 366);
             this.labelPrecio_vuelto.Name = "labelPrecio_vuelto";
             this.labelPrecio_vuelto.Size = new System.Drawing.Size(125, 33);
-            this.labelPrecio_vuelto.TabIndex = 13;
+            this.labelPrecio_vuelto.TabIndex = 0;
             this.labelPrecio_vuelto.Text = "VUELTO ";
             this.labelPrecio_vuelto.Visible = false;
             // 
@@ -183,7 +189,7 @@
             this.label6.Location = new System.Drawing.Point(196, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 23);
-            this.label6.TabIndex = 14;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Ticket";
             // 
             // labelTicket
@@ -191,10 +197,10 @@
             this.labelTicket.AutoSize = true;
             this.labelTicket.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTicket.ForeColor = System.Drawing.Color.Black;
-            this.labelTicket.Location = new System.Drawing.Point(272, 134);
+            this.labelTicket.Location = new System.Drawing.Point(302, 134);
             this.labelTicket.Name = "labelTicket";
             this.labelTicket.Size = new System.Drawing.Size(154, 23);
-            this.labelTicket.TabIndex = 15;
+            this.labelTicket.TabIndex = 0;
             this.labelTicket.Text = "000000000000";
             // 
             // Modo_Pago
@@ -202,7 +208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(164)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(671, 450);
+            this.ClientSize = new System.Drawing.Size(654, 450);
             this.Controls.Add(this.labelTicket);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.labelPrecio_vuelto);
@@ -219,6 +225,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Modo_Pago";
+            this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modo_Pago";
             this.Shown += new System.EventHandler(this.Modo_Pago_Shown);
             this.ResumeLayout(false);
