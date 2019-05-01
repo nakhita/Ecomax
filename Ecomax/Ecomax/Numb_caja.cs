@@ -12,13 +12,13 @@ namespace Ecomax
     public partial class Numb_caja : Form
     {
         public int n_caja;
-        Pantalla_caja pj;
+        CajaPantalla pj;
         Eventos E;
         public Numb_caja()
         {
             InitializeComponent();
             E = new Eventos(this);
-            pj = new Pantalla_caja();
+            pj = new CajaPantalla();
         }
 
         private void Key_Press(object sender, KeyPressEventArgs e)

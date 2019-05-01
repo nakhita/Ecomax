@@ -7,6 +7,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+
 namespace Ecomax
 {
     class conexion_BD
@@ -14,15 +15,14 @@ namespace Ecomax
         protected SqlConnection conexion = null;
         protected SqlCommand cmd;
         /*protected SqlDataReader dr;*/
-
-        
-        
         
         protected bool IsConnect(){
             try{
                 if (conexion==null){
-                conexion = new SqlConnection("Data Source=BABYDADA\\SQLEXPRESS;Initial Catalog=marketBD;User ID=market;Password=admin123");
-                 }
+
+                    conexion = new SqlConnection("Data Source=BABYDADA\\SQLEXPRESS;Initial Catalog=marketBD;User ID=market;Password=admin123");
+                    //conexion = new SqlConnection("Data Source=marketbd.mssql.somee.com;Initial Catalog=marketbd;User ID=ecomax;Password=P@ssw0rd1");
+                }
                 conexion.Open();
                 
             }

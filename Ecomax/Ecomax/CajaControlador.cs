@@ -7,9 +7,6 @@ namespace Ecomax
 {
     class CajaControlador : Controlador
     {
-
-
-        
         public string[] ObtenerPrecio(int art,int ID_scr,int cant)
         {
             string[] datos_vector = null;

@@ -22,5 +22,16 @@ namespace Ecomax.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BABYDADA\\SQLEXPRESS;Initial Catalog=marketBD;User ID=market;Password=" +
+            "admin123")]
+        public string marketBDConnectionString {
+            get {
+                return ((string)(this["marketBDConnectionString"]));
+            }
+        }
     }
 }

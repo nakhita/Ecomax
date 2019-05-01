@@ -1,6 +1,6 @@
 ﻿namespace Ecomax
 {
-    partial class Pantalla_caja
+    partial class CajaPantalla
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla_caja));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CajaPantalla));
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape4 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -387,7 +387,7 @@
             this.labelEmpleado.Text = "No me pierdo mas";
             this.labelEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Pantalla_caja
+            // CajaPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -418,12 +418,11 @@
             this.Controls.Add(this.boxLogo);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Pantalla_caja";
+            this.Name = "CajaPantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pantalla_caja";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Pantalla_caja_Shown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mover);
             ((System.ComponentModel.ISupportInitialize)(this.boxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

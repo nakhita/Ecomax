@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Ecomax
 {
-    public partial class Pantalla_caja : Form
+    public partial class CajaPantalla : Form
     {
         private double Total=0;
         Eventos E;
@@ -20,9 +20,10 @@ namespace Ecomax
         private List<int> lista = new List<int>();
         object[] registro;
         object[] Cantidad_descontar;
+        
 
 
-        public Pantalla_caja()
+        public CajaPantalla()
         {
             InitializeComponent();
             E = new Eventos(this);
@@ -116,13 +117,18 @@ namespace Ecomax
                 bool IsLetra = C_BD.CompararLetra(E.obtener_datos_text(boxArt));
                 if (IsLetra)
                 {
+                    
                     long ticket = Convert.ToInt64(DateTime.Now.ToString("yyMMddhhmmssff"));
                     RegistrarVenta(ticket, Convert.ToDouble(boxTotal.Text));
-                    M_pago.Show();
-                    
+                    M_pago.ShowDialog();
+                    bool error = M_pago.error();
+                    if (!error) {
+                        reinicio();
+                    }
                 }
                 else if(!IsLetra)
                 {
+                    
                     int art = int.Parse(E.obtener_datos_text(boxArt));
                     int cant = int.Parse(E.obtener_datos_text(boxCant));
                     int pos = C_BD.Encontro(art, lista);
@@ -174,7 +180,7 @@ namespace Ecomax
             Cantidad_descontar = new object[cant];
             for (int i = 0; i < cant; i++) {
                 Cantidad_descontar[i] = Convert.ToInt32(listBox4.Items[i]);
-                E.cartel(Cantidad_descontar[i].ToString());
+                
             }
             
         }
@@ -218,40 +224,44 @@ namespace Ecomax
                     E.tab(sender, e);
                     boxArt.Text = vacio;
                     boxCant.Text = "1";
-
                 }
                 else if (boxArt.Focused)
                 {
-
                     string art;
                     art = E.obtener_datos_text(boxArt);
-
                     if (art == vacio)
                     {
                         boxArt.Text = "0";
                     }
                     E.tab(sender, e);
-
                 }
             }
 
         }
-        private void Mover(object sender, MouseEventArgs e)
+
+        private void reinicio() {
+            labelCaja.Text = "Caja " + Caja.ToString();
+            boxArt.Clear();
+            lista.Clear();
+            limpiar();
+            Total = 0;
+            boxStotal.Text = "0.00";
+            boxTotal.Text = "0.00";
+            labelEmpleado.Text = UserGlobal.DATOS.Apellido + " " + UserGlobal.DATOS.Nombre;
+            //boxArt.Focus();
+        }
+         /*private void Mover(object sender, MouseEventArgs e)
         {
             E.Mover_pantalla(sender, e);
-        }
+        } */
 
         private void Pantalla_caja_Shown(object sender, EventArgs e)
         {
-
-            
             labelCaja.Text = "Caja " + Caja.ToString();
-            limpiar();
             Total = 0;
             boxStotal.Text = "0.00";
             boxTotal.Text = "0.00";
             labelEmpleado.Text = UserGlobal.DATOS.Apellido + " " +UserGlobal.DATOS.Nombre;
         }
-
     }
 }

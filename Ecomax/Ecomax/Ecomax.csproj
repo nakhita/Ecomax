@@ -57,6 +57,7 @@
       <DependentUpon>Modo_Pago.cs</DependentUpon>
     </Compile>
     <Compile Include="Modo_PagoControlador.cs" />
+    <Compile Include="Modo_pago_BD.cs" />
     <Compile Include="Numb_caja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +73,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantalla_caja.cs">
+    <Compile Include="CajaPantalla.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include=".Designer.cs">
-      <DependentUpon>Pantalla_caja.cs</DependentUpon>
+      <DependentUpon>CajaPantalla.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -92,8 +93,8 @@
     <EmbeddedResource Include="Numb_caja.resx">
       <DependentUpon>Numb_caja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantalla_caja.resx">
-      <DependentUpon>Pantalla_caja.cs</DependentUpon>
+    <EmbeddedResource Include="CajaPantalla.resx">
+      <DependentUpon>CajaPantalla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

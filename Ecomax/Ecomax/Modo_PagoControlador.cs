@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ecomax
 {
-    class ModoPagoControlador
+    class ModoPagoControlador : Controlador
     {
         public bool IsNumber(string num) {
             int referencia = 0;
@@ -21,7 +21,7 @@ namespace Ecomax
         }
 
         public bool InNumber(int num) {
-            if (num > 0 || num <= 3) {
+            if (num > 0 && num <= 3) {
                 return true;
             }
             return false;
