@@ -82,6 +82,7 @@ namespace Ecomax
                     string S_comtar = "";
                     S_comtar = boxTarjVuelto.Text;
                     int I_pago = Convert.ToInt32(boxModoPago.Text);
+                    int I_BoxMP = Convert.ToInt32(boxModoPago.Text);
                     if (S_comtar == vacio)
                     {
                         if (I_pago == 1)
@@ -96,7 +97,7 @@ namespace Ecomax
                     else if (M_pago.IsNumber(S_comtar))
                     {
                         int I_comtar = Convert.ToInt32(S_comtar);
-                        if (Convert.ToInt32(boxModoPago.Text) == 1)
+                        if (I_BoxMP == 1)
                         {
                             double box = Convert.ToDouble(boxTarjVuelto.Text);
                             double precio = Convert.ToDouble(labelPrecio_total.Text);
