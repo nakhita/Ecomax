@@ -7,7 +7,7 @@ namespace Ecomax
 {
     class ModoPagoControlador : Controlador
     {
-        Modo_Pago M_Pago = new Modo_Pago();
+        Modo_Pago M_Pago;
         Modo_pago_BD MP_BD = new Modo_pago_BD();
         public bool IsNumber(string num) {
             int referencia = 0;
@@ -34,7 +34,7 @@ namespace Ecomax
             double monto = Convert.ToDouble(Reg_venta[1]);
             int n_comp = Convert.ToInt32(Reg_venta[2]);
             int ID_mp = Convert.ToInt32(Reg_venta[3]);
-            bool ok= MP_BD.RegistrarVenta(Ticket,monto,n_comp,ID_mp);
+            bool ok= MP_BD.RegistrarVentaBD(Ticket,monto,n_comp,ID_mp);
             if (!ok) {
                 return false;
             }
@@ -45,13 +45,20 @@ namespace Ecomax
         {
             int ID_scr = UserGlobal.DATOS.ID_scr;
             int largo = Desc_art.Count();
+            Console.WriteLine("Largo "+largo.ToString());
             int i = 0;
             bool ok=false;
             for (i=0; i < largo; i++){
-                ok = MP_BD.DescArt(Desc_art[i],Desc_cant[i],ID_scr);
-            }            
+                ok = MP_BD.DescArt( Desc_art[i],Desc_cant[i],ID_scr);
+                Console.WriteLine("descart " + Desc_art[i].ToString());
+                Console.WriteLine("descant " + Desc_cant[i].ToString());
+            }
             return ok;
             
+        }
+        public void setPantalla_ModoPago(Modo_Pago Pantalla_ModoPago)
+        {
+            M_Pago = Pantalla_ModoPago;
         }
     }
 }

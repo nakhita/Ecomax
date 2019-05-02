@@ -10,14 +10,20 @@ namespace Ecomax
 {
     class Modo_pago_BD : conexion_BD
     {
-        public bool RegistrarVenta(long Ticket,double monto, int n_comp, int ID_mp) {
+        public bool RegistrarVentaBD(long Ticket,double monto, int n_comp, int ID_mp) {
             try
             {
                 if (IsConnect())
                 {
+                    int retorno;
                     //insert into Venta(Ticket, monto, n_comp, ID_mp) values(12345678901234,10005.50,12345678,1);
-                    string cadena = "insert into Venta(Ticket, monto, n_comp, ID_mp) values('" + Ticket + "','" + monto + "','" + n_comp + "','" + ID_mp + "'); ";
+                    string cadena = "insert into Venta(Ticket, monto, n_comp, ID_mp) values(@Ticket,@monto,@n_comp,@ID_mp); ";
                     cmd = new SqlCommand(cadena, conexion);
+                    cmd.Parameters.AddWithValue("@Ticket",Ticket);
+                    cmd.Parameters.AddWithValue("@monto",monto);
+                    cmd.Parameters.AddWithValue("@n_comp",n_comp);
+                    cmd.Parameters.AddWithValue("@ID_mp",ID_mp);
+                    retorno = cmd.ExecuteNonQuery();
                     Close();
                 }
             }
@@ -41,11 +47,14 @@ namespace Ecomax
                     cmd = new SqlCommand(cadena, conexion);
                     if (cmd.ExecuteScalar() != null)
                     {
+                        int retorno;
                         cant = (Int32)cmd.ExecuteScalar();
                         cant = cantidad - cant;
+                        Console.WriteLine(cant.ToString());
                         cadena = "update Producto_Sucursal set cantidad='" + cant + "' where ID_scr = '" + ID_scr + "' and Cod_art= '" + Cod_art + "';";
+                        cmd = new SqlCommand(cadena, conexion);
+                        retorno = cmd.ExecuteNonQuery();
                     }
-
                     Close();
                 }
             }

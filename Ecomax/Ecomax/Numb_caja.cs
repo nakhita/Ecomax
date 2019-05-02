@@ -39,11 +39,13 @@ namespace Ecomax
                         }
                         else if(n_caja > 0  && n_caja <= 5)
                         {
+                            Console.WriteLine("Entrando en Numb_caja linea 42");
                             pj.set_caja(n_caja);
                             E.Abrir_otroForm(sender, e, pj);
                         }
                     }
                     catch (Exception ex) {
+                        Console.WriteLine("Entrando en Numb_caja a la excepcion linea 48 ");
                         Console.WriteLine(ex);
                         boxCaja.Text = "";
                     }

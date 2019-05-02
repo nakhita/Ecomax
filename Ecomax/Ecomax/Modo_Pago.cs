@@ -23,9 +23,11 @@ namespace Ecomax
         
         public Modo_Pago()
         {
-            InitializeComponent();
+            InitializeComponent();            
             E = new Eventos(this);
             MP_ctrl = new ModoPagoControlador();
+            MP_ctrl.setPantalla_ModoPago(this);
+            
         }
 
         public void setPantalla_caja(CajaPantalla pantalla_caja)
@@ -112,15 +114,21 @@ namespace Ecomax
                                 labelPrecio_vuelto.Text = vuelto.ToString();
                                 RegistrarVenta[2] = Convert.ToInt32(boxModoPago.Text);
                                 RegistrarVenta[3] = 0;
-                                ok_R= MP_ctrl.RegistrarVenta(RegistrarVenta);
+                                E.cartel(ls_DescArt.ToString());
+                                E.cartel(ls_DescCant.ToString());
+                                ok_R = MP_ctrl.RegistrarVenta(RegistrarVenta);
                                 ok_D = MP_ctrl.DescontarCant(ls_DescArt,ls_DescCant);
+                                E.cartel(ok_R.ToString());
+                                E.cartel(ok_D.ToString());
                                 if (ok_R && ok_D){
                                     E.cartel("Compra registrada.");
-                                    reinicio();
-                                    this.Hide();
+                                    
                                 }
                                 else {
                                     E.cartel("Error al registrar la compra.");
+                                    error_MPago = true;
+                                    reinicio();
+                                    this.Hide();
                                 }
                             }
                             else if (vuelto < 0)
@@ -135,13 +143,20 @@ namespace Ecomax
                             RegistrarVenta[2] = Convert.ToInt32(boxModoPago.Text);
                             RegistrarVenta[3] = Convert.ToInt32(boxTarjVuelto.Text);
                             ok_R = MP_ctrl.RegistrarVenta(RegistrarVenta);
-                            if (ok_R){
+                            ok_D = MP_ctrl.DescontarCant(ls_DescArt, ls_DescCant);
+                            E.cartel(ok_R.ToString());
+                            E.cartel(ok_D.ToString());
+                            if (ok_R && ok_D)
+                            {
                                 E.cartel("Compra registrada.");
                                 reinicio();
                                 this.Hide();
                             }
                             else{
                                 E.cartel("Error al registrar la compra.");
+                                error_MPago = true;
+                                reinicio();
+                                this.Hide();
                             }
                         }
                     }
@@ -172,7 +187,7 @@ namespace Ecomax
         }
 
         private void Modo_Pago_Shown(object sender, EventArgs e)
-        {   
+        {
             RegistrarVenta = new object[4];
             ls_DescCant = new List<int>();
             ls_DescArt = new List<int>();
@@ -181,7 +196,6 @@ namespace Ecomax
             ls_DescCant = p_caja.lsCant_desc;
             labelTicket.Text = RegistrarVenta[0].ToString();
             labelPrecio_total.Text = RegistrarVenta[1].ToString();
-
         }
     }
 }

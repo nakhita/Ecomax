@@ -126,6 +126,7 @@ namespace Ecomax
                     
                     long ticket = Convert.ToInt64(DateTime.Now.ToString("yyMMddhhmmssff"));
                     RegistrarVenta(ticket, Convert.ToDouble(boxTotal.Text));
+                    CargarListas();
                     M_pago.ShowDialog();
                     bool error = M_pago.error();
                     if (!error) {
@@ -173,7 +174,14 @@ namespace Ecomax
                 
             } 
         }
-        
+        public void CargarListas() {
+            int cant = lista.Count();
+            int i = 0;
+            for (i = 0; i < cant; i++) {
+                lsArt_desc.Add(lista[i]);
+                lsCant_desc.Add(Convert.ToInt32(listBox4.Items[i]));
+            }
+        }
         public void set_caja(int n_caja) {
             Caja = n_caja;
         }
