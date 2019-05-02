@@ -16,12 +16,19 @@ namespace Ecomax
         CajaControlador C_BD;
         Modo_Pago M_pago;
         private int Caja;
-        private int cantidad_registros;
         private List<int> lista = new List<int>();
+        private List<int> Art_desc = new List<int>();
+        private List<int> Cant_desc = new List<int>();
         object[] registro;
-        object[] Cantidad_descontar;
-        
+        public List<int> lsArt_desc
+        {
+            get { return Art_desc; }
+        }
 
+        public List<int> lsCant_desc
+        {
+            get { return Cant_desc; }
+        }
 
         public CajaPantalla()
         {
@@ -30,9 +37,8 @@ namespace Ecomax
             C_BD = new CajaControlador();
             M_pago = new Modo_Pago();
             M_pago.setPantalla_caja(this);
-
-
         }
+
         private void Agregar(int art, string descripcion, double precio, int cant) {
             /* listBox1 = Art;
              * listBox2 = descripcion;
@@ -172,37 +178,21 @@ namespace Ecomax
             Caja = n_caja;
         }
 
-        public int set_cant()
-        {
-            return cantidad_registros;
-        }
-        public void CantAdescontar(int cant) {
-            Cantidad_descontar = new object[cant];
+        public void CantAdescontar() {
+            int cant = lista.Count();
             for (int i = 0; i < cant; i++) {
-                Cantidad_descontar[i] = Convert.ToInt32(listBox4.Items[i]);
-                
+                Art_desc.Add(lista[i]);
+                Cant_desc.Add(Convert.ToInt32(listBox4.Items[i]));
             }
-            
         }
         public void RegistrarVenta(long ticket,double total) {
-            int cant = lista.Count();
-            cantidad_registros = cant + 2;
-            registro = new object[cantidad_registros];
+            registro = new object[4];
             registro[0]= ticket;
             registro[1]= total;
-            for (int i = 0; i < cant; i++) {
-                registro[i + 2] = lista[i];
-            }
-            CantAdescontar(cant);
-            
         }
         public object[] Ob_registrarVenta()
         {
             return registro;
-        }
-        public object[] Ob_DescuentaCantidad()
-        {
-            return Cantidad_descontar;
         }
         private void limpiar() {
             listBox1.Items.Clear();

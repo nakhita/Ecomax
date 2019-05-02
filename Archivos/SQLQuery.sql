@@ -145,34 +145,39 @@ values ('Tarjeta de Credito');
 insert into ModoPago(nombre)
 values ('Tarjeta de Debito');
 
+/*
 insert into Venta(Ticket,monto,n_comp,ID_mp)
 values (12345678901234,10005.50,12345678,1);
 insert into Venta(Ticket,monto,n_comp,ID_mp)
 values (12345678911234,10005.50,12345678,2);
 insert into Venta(Ticket,monto,n_comp,ID_mp)
 values (1234567921234,10005.50,12345678,3);
+*/
 
 /*Selects*/
-
+select * from Usuario;
 select * from Empleado;
 select * from Categoria;
-select * from Usuario;
-select * from Sucursal;
-select * from Proveedor;
-select * from Producto;
-select * from Categoria;
 select * from Producto_Sucursal;
+select * from Sucursal;
+select * from Producto;
+select * from Proveedor;
+select * from Venta;
+select * from ModoPago;
+
+
 
 /*Drops*/
 
 /*
 drop table Usuario;
 drop table Empleado;
-drop table  Sucursal;
 drop table Categoria;
 drop table Producto_Sucursal;
+drop table Sucursal;
 drop table Producto;
 drop table Proveedor;
-drop table ModoPago;
 drop table Venta;
+drop table ModoPago;
+
 */

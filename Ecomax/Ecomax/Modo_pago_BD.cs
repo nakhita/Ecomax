@@ -2,10 +2,61 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace Ecomax
 {
-    class Modo_pago_BD
+    class Modo_pago_BD : conexion_BD
     {
+        public bool RegistrarVenta(long Ticket,double monto, int n_comp, int ID_mp) {
+            try
+            {
+                if (IsConnect())
+                {
+                    //insert into Venta(Ticket, monto, n_comp, ID_mp) values(12345678901234,10005.50,12345678,1);
+                    string cadena = "insert into Venta(Ticket, monto, n_comp, ID_mp) values('" + Ticket + "','" + monto + "','" + n_comp + "','" + ID_mp + "'); ";
+                    cmd = new SqlCommand(cadena, conexion);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+
+                return false;
+            }
+            return true;
+        }
+        public bool DescArt(int Cod_art, int cantidad, int ID_scr)
+        {
+            try
+            {
+                if (IsConnect())
+                {
+                    int cant = 0;
+                    //insert into Venta(Ticket, monto, n_comp, ID_mp) values(12345678901234,10005.50,12345678,1);
+                    string cadena = "select PS.cantidad from Producto P inner join Producto_Sucursal PS on P.Cod_art = PS.Cod_art where P.Cod_art = '" + Cod_art + "' and PS.ID_scr ='" + ID_scr + "'; ";
+                    cmd = new SqlCommand(cadena, conexion);
+                    if (cmd.ExecuteScalar() != null)
+                    {
+                        cant = (Int32)cmd.ExecuteScalar();
+                        cant = cantidad - cant;
+                        cadena = "update Producto_Sucursal set cantidad='" + cant + "' where ID_scr = '" + ID_scr + "' and Cod_art= '" + Cod_art + "';";
+                    }
+
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+
+                return false;
+            }
+            return true;
+        }
+
     }
 }
