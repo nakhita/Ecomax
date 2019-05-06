@@ -23,6 +23,6 @@ D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\bin\Debug\Microso
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.csproj.CopyComplete
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Login.resources
-D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Numb_caja.resources
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Modo_Pago.resources
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.CajaPantalla.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Num_caja.resources

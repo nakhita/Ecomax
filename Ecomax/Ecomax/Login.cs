@@ -15,7 +15,7 @@ namespace Ecomax
         Eventos E;
         UsuarioControlador BD;
         
-        Numb_caja Caja;
+        Num_caja Caja;
         private string us = "USUARIO";
         private string ps = "CONTRASEÑA";
         CajaControlador C_BD;
@@ -26,7 +26,7 @@ namespace Ecomax
             E = new Eventos(this);
             BD = new UsuarioControlador();
             C_BD = new CajaControlador();
-            Caja = new Numb_caja();
+            Caja = new Num_caja();
             
         }
 

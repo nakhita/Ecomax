@@ -228,7 +228,6 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modo_Pago";
-            this.Shown += new System.EventHandler(this.Modo_Pago_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

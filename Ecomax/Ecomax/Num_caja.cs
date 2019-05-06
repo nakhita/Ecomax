@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace Ecomax
 {
-    public partial class Numb_caja : Form
+    public partial class Num_caja : Form
     {
         public int n_caja;
         CajaPantalla pj;
+        Num_cajaControlador Num_ctrl = new Num_cajaControlador();
         Eventos E;
-        public Numb_caja()
+        public Num_caja()
         {
             InitializeComponent();
             E = new Eventos(this);
             pj = new CajaPantalla();
+            Num_ctrl.Ob_Pantalla(this);
         }
 
         private void Key_Press(object sender, KeyPressEventArgs e)
@@ -26,32 +28,38 @@ namespace Ecomax
             int key = E.Key_press_global(sender, e);
             if (key == 1)
             {
-                string vacio = "";
-                string caja = E.obtener_datos_text(boxCaja);
-
-                if (caja!= vacio) {
-                    try
+                Validar_enter(sender, e);
+            }
+        }
+        private void Validar_enter(object sender, KeyPressEventArgs e){
+            string vacio = "";
+            string caja = E.obtener_datos_text(boxCaja);
+            if (caja != vacio){
+                try{
+                    if (Num_ctrl.IsNumber(caja))
                     {
                         n_caja = Convert.ToInt32(caja);
-                        if (n_caja <= 0)
+                        if (Num_ctrl.InNumber(n_caja))
                         {
-                            boxCaja.Text = "";
-                        }
-                        else if(n_caja > 0  && n_caja <= 5)
-                        {
-                            Console.WriteLine("Entrando en Numb_caja linea 42");
                             pj.set_caja(n_caja);
                             E.Abrir_otroForm(sender, e, pj);
                         }
+                        else
+                        {
+                            boxCaja.Clear();
+                        }
                     }
-                    catch (Exception ex) {
-                        Console.WriteLine("Entrando en Numb_caja a la excepcion linea 48 ");
-                        Console.WriteLine(ex);
-                        boxCaja.Text = "";
+                    else
+                    {
+                        boxCaja.Clear();
                     }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
             }
         }
-        
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Ecomax
 {
-    partial class Numb_caja
+    partial class Num_caja
     {
         /// <summary>
         /// Required designer variable.
@@ -56,7 +56,7 @@
             this.boxCaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxCaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
-            // Numb_caja
+            // Num_caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -66,9 +66,9 @@
             this.Controls.Add(this.boxCaja);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Numb_caja";
+            this.Name = "Num_caja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Numb_caja";
+            this.Text = "Num_caja";
             this.ResumeLayout(false);
             this.PerformLayout();
 

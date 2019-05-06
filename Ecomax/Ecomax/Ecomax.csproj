@@ -58,12 +58,13 @@
     </Compile>
     <Compile Include="Modo_PagoControlador.cs" />
     <Compile Include="Modo_pago_BD.cs" />
-    <Compile Include="Numb_caja.cs">
+    <Compile Include="Num_caja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Numb_caja.Designer.cs">
-      <DependentUpon>Numb_caja.cs</DependentUpon>
+    <Compile Include="Num_caja.Designer.cs">
+      <DependentUpon>Num_caja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Num_cajaControlador.cs" />
     <Compile Include="User_datos.cs" />
     <Compile Include="User_global.cs" />
     <Compile Include="Eventos.cs" />
@@ -90,8 +91,8 @@
     <EmbeddedResource Include="Modo_Pago.resx">
       <DependentUpon>Modo_Pago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Numb_caja.resx">
-      <DependentUpon>Numb_caja.cs</DependentUpon>
+    <EmbeddedResource Include="Num_caja.resx">
+      <DependentUpon>Num_caja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CajaPantalla.resx">
       <DependentUpon>CajaPantalla.cs</DependentUpon>

@@ -28,6 +28,12 @@ namespace Ecomax
             }
             return false;
         }
+        public bool InNumberTar(int num) {
+            if (num >= 10000000 && num <= 999999999) {
+                return true;
+            }
+            return false;
+        }
 
         public bool RegistrarVenta(object[] Reg_venta) {
             long Ticket = Convert.ToInt64(Reg_venta[0]);
@@ -45,13 +51,10 @@ namespace Ecomax
         {
             int ID_scr = UserGlobal.DATOS.ID_scr;
             int largo = Desc_art.Count();
-            Console.WriteLine("Largo "+largo.ToString());
             int i = 0;
             bool ok=false;
             for (i=0; i < largo; i++){
                 ok = MP_BD.DescArt( Desc_art[i],Desc_cant[i],ID_scr);
-                Console.WriteLine("descart " + Desc_art[i].ToString());
-                Console.WriteLine("descant " + Desc_cant[i].ToString());
             }
             return ok;
             
