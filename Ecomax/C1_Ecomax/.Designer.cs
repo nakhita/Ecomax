@@ -70,7 +70,7 @@
             this.rectangleShape3,
             this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1876, 1080);
+            this.shapeContainer1.Size = new System.Drawing.Size(1209, 875);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -80,9 +80,9 @@
             this.rectangleShape4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape4.BorderColor = System.Drawing.Color.Transparent;
             this.rectangleShape4.Enabled = false;
-            this.rectangleShape4.Location = new System.Drawing.Point(1513, 680);
+            this.rectangleShape4.Location = new System.Drawing.Point(831, 609);
             this.rectangleShape4.Name = "rectangleShape4";
-            this.rectangleShape4.Size = new System.Drawing.Size(349, 100);
+            this.rectangleShape4.Size = new System.Drawing.Size(349, 81);
             // 
             // rectangleShape3
             // 
@@ -90,9 +90,9 @@
             this.rectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape3.BorderColor = System.Drawing.Color.Transparent;
             this.rectangleShape3.Enabled = false;
-            this.rectangleShape3.Location = new System.Drawing.Point(1512, 567);
+            this.rectangleShape3.Location = new System.Drawing.Point(831, 522);
             this.rectangleShape3.Name = "rectangleShape3";
-            this.rectangleShape3.Size = new System.Drawing.Size(348, 105);
+            this.rectangleShape3.Size = new System.Drawing.Size(348, 81);
             // 
             // rectangleShape2
             // 
@@ -100,9 +100,9 @@
             this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape2.BorderColor = System.Drawing.Color.Transparent;
             this.rectangleShape2.Enabled = false;
-            this.rectangleShape2.Location = new System.Drawing.Point(1511, 152);
+            this.rectangleShape2.Location = new System.Drawing.Point(829, 150);
             this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(348, 406);
+            this.rectangleShape2.Size = new System.Drawing.Size(348, 365);
             // 
             // rectangleShape1
             // 
@@ -112,14 +112,14 @@
             this.rectangleShape1.Enabled = false;
             this.rectangleShape1.Location = new System.Drawing.Point(23, 151);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(1478, 888);
+            this.rectangleShape1.Size = new System.Drawing.Size(798, 702);
             // 
             // boxLogo
             // 
             this.boxLogo.Image = ((System.Drawing.Image)(resources.GetObject("boxLogo.Image")));
-            this.boxLogo.Location = new System.Drawing.Point(1506, 784);
+            this.boxLogo.Location = new System.Drawing.Point(845, 692);
             this.boxLogo.Name = "boxLogo";
-            this.boxLogo.Size = new System.Drawing.Size(367, 293);
+            this.boxLogo.Size = new System.Drawing.Size(312, 180);
             this.boxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.boxLogo.TabIndex = 1;
             this.boxLogo.TabStop = false;
@@ -130,7 +130,7 @@
             this.labelSBTotal_M.BackColor = System.Drawing.Color.White;
             this.labelSBTotal_M.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSBTotal_M.ForeColor = System.Drawing.Color.DimGray;
-            this.labelSBTotal_M.Location = new System.Drawing.Point(1617, 567);
+            this.labelSBTotal_M.Location = new System.Drawing.Point(941, 522);
             this.labelSBTotal_M.Name = "labelSBTotal_M";
             this.labelSBTotal_M.Size = new System.Drawing.Size(136, 27);
             this.labelSBTotal_M.TabIndex = 0;
@@ -143,7 +143,7 @@
             this.labelTotal_M.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTotal_M.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotal_M.ForeColor = System.Drawing.Color.DimGray;
-            this.labelTotal_M.Location = new System.Drawing.Point(1637, 680);
+            this.labelTotal_M.Location = new System.Drawing.Point(962, 609);
             this.labelTotal_M.Name = "labelTotal_M";
             this.labelTotal_M.Size = new System.Drawing.Size(84, 27);
             this.labelTotal_M.TabIndex = 0;
@@ -156,7 +156,7 @@
             this.labelPeso_M.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelPeso_M.Font = new System.Drawing.Font("Segoe MDL2 Assets", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPeso_M.ForeColor = System.Drawing.Color.DimGray;
-            this.labelPeso_M.Location = new System.Drawing.Point(1550, 603);
+            this.labelPeso_M.Location = new System.Drawing.Point(874, 545);
             this.labelPeso_M.Name = "labelPeso_M";
             this.labelPeso_M.Size = new System.Drawing.Size(46, 53);
             this.labelPeso_M.TabIndex = 0;
@@ -169,7 +169,7 @@
             this.labelPeso_M2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelPeso_M2.Font = new System.Drawing.Font("Segoe MDL2 Assets", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPeso_M2.ForeColor = System.Drawing.Color.DimGray;
-            this.labelPeso_M2.Location = new System.Drawing.Point(1550, 712);
+            this.labelPeso_M2.Location = new System.Drawing.Point(872, 636);
             this.labelPeso_M2.Name = "labelPeso_M2";
             this.labelPeso_M2.Size = new System.Drawing.Size(46, 53);
             this.labelPeso_M2.TabIndex = 0;
@@ -181,7 +181,7 @@
             this.boxStotal.BackColor = System.Drawing.Color.White;
             this.boxStotal.Font = new System.Drawing.Font("Segoe MDL2 Assets", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxStotal.ForeColor = System.Drawing.Color.Peru;
-            this.boxStotal.Location = new System.Drawing.Point(1656, 616);
+            this.boxStotal.Location = new System.Drawing.Point(975, 558);
             this.boxStotal.Name = "boxStotal";
             this.boxStotal.Size = new System.Drawing.Size(80, 40);
             this.boxStotal.TabIndex = 0;
@@ -193,7 +193,7 @@
             this.boxTotal.BackColor = System.Drawing.Color.White;
             this.boxTotal.Font = new System.Drawing.Font("Segoe MDL2 Assets", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxTotal.ForeColor = System.Drawing.Color.Peru;
-            this.boxTotal.Location = new System.Drawing.Point(1656, 725);
+            this.boxTotal.Location = new System.Drawing.Point(978, 649);
             this.boxTotal.Name = "boxTotal";
             this.boxTotal.Size = new System.Drawing.Size(80, 40);
             this.boxTotal.TabIndex = 0;
@@ -205,7 +205,7 @@
             this.labelArticulo_M.BackColor = System.Drawing.Color.White;
             this.labelArticulo_M.Font = new System.Drawing.Font("Segoe MDL2 Assets", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelArticulo_M.ForeColor = System.Drawing.Color.DimGray;
-            this.labelArticulo_M.Location = new System.Drawing.Point(1544, 430);
+            this.labelArticulo_M.Location = new System.Drawing.Point(857, 398);
             this.labelArticulo_M.Name = "labelArticulo_M";
             this.labelArticulo_M.Size = new System.Drawing.Size(143, 33);
             this.labelArticulo_M.TabIndex = 0;
@@ -217,7 +217,7 @@
             this.labelCantidad_M.BackColor = System.Drawing.Color.White;
             this.labelCantidad_M.Font = new System.Drawing.Font("Segoe MDL2 Assets", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCantidad_M.ForeColor = System.Drawing.Color.DimGray;
-            this.labelCantidad_M.Location = new System.Drawing.Point(1541, 493);
+            this.labelCantidad_M.Location = new System.Drawing.Point(854, 461);
             this.labelCantidad_M.Name = "labelCantidad_M";
             this.labelCantidad_M.Size = new System.Drawing.Size(144, 33);
             this.labelCantidad_M.TabIndex = 0;
@@ -228,7 +228,7 @@
             this.boxArt.BackColor = System.Drawing.Color.White;
             this.boxArt.Font = new System.Drawing.Font("Segoe MDL2 Assets", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxArt.ForeColor = System.Drawing.Color.Peru;
-            this.boxArt.Location = new System.Drawing.Point(1693, 420);
+            this.boxArt.Location = new System.Drawing.Point(1006, 388);
             this.boxArt.Multiline = true;
             this.boxArt.Name = "boxArt";
             this.boxArt.Size = new System.Drawing.Size(131, 57);
@@ -240,7 +240,7 @@
             // 
             this.boxCant.Font = new System.Drawing.Font("Segoe MDL2 Assets", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxCant.ForeColor = System.Drawing.Color.Peru;
-            this.boxCant.Location = new System.Drawing.Point(1693, 483);
+            this.boxCant.Location = new System.Drawing.Point(1006, 451);
             this.boxCant.Multiline = true;
             this.boxCant.Name = "boxCant";
             this.boxCant.Size = new System.Drawing.Size(131, 57);
@@ -254,7 +254,7 @@
             this.labelCaja.AutoSize = true;
             this.labelCaja.BackColor = System.Drawing.Color.White;
             this.labelCaja.Font = new System.Drawing.Font("barcode font", 150F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCaja.Location = new System.Drawing.Point(1539, 179);
+            this.labelCaja.Location = new System.Drawing.Point(860, 164);
             this.labelCaja.Name = "labelCaja";
             this.labelCaja.Size = new System.Drawing.Size(217, 203);
             this.labelCaja.TabIndex = 0;
@@ -268,7 +268,7 @@
             this.listBox1.ItemHeight = 30;
             this.listBox1.Location = new System.Drawing.Point(22, 151);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(144, 904);
+            this.listBox1.Size = new System.Drawing.Size(103, 694);
             this.listBox1.TabIndex = 0;
             // 
             // labelN_art
@@ -277,7 +277,7 @@
             this.labelN_art.BackColor = System.Drawing.Color.Transparent;
             this.labelN_art.Font = new System.Drawing.Font("Segoe MDL2 Assets", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelN_art.ForeColor = System.Drawing.Color.White;
-            this.labelN_art.Location = new System.Drawing.Point(33, 115);
+            this.labelN_art.Location = new System.Drawing.Point(17, 115);
             this.labelN_art.Name = "labelN_art";
             this.labelN_art.Size = new System.Drawing.Size(121, 33);
             this.labelN_art.TabIndex = 0;
@@ -289,7 +289,7 @@
             this.labelDescripcion.BackColor = System.Drawing.Color.Transparent;
             this.labelDescripcion.Font = new System.Drawing.Font("Segoe MDL2 Assets", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescripcion.ForeColor = System.Drawing.Color.White;
-            this.labelDescripcion.Location = new System.Drawing.Point(371, 117);
+            this.labelDescripcion.Location = new System.Drawing.Point(175, 117);
             this.labelDescripcion.Name = "labelDescripcion";
             this.labelDescripcion.Size = new System.Drawing.Size(191, 33);
             this.labelDescripcion.TabIndex = 0;
@@ -301,11 +301,11 @@
             this.labelCantidad.BackColor = System.Drawing.Color.Transparent;
             this.labelCantidad.Font = new System.Drawing.Font("Segoe MDL2 Assets", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCantidad.ForeColor = System.Drawing.Color.White;
-            this.labelCantidad.Location = new System.Drawing.Point(1151, 117);
+            this.labelCantidad.Location = new System.Drawing.Point(583, 117);
             this.labelCantidad.Name = "labelCantidad";
-            this.labelCantidad.Size = new System.Drawing.Size(144, 33);
+            this.labelCantidad.Size = new System.Drawing.Size(92, 33);
             this.labelCantidad.TabIndex = 0;
-            this.labelCantidad.Text = "CANTIDAD";
+            this.labelCantidad.Text = "CANT.";
             // 
             // labelXunidad
             // 
@@ -313,7 +313,7 @@
             this.labelXunidad.BackColor = System.Drawing.Color.Transparent;
             this.labelXunidad.Font = new System.Drawing.Font("Segoe MDL2 Assets", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelXunidad.ForeColor = System.Drawing.Color.White;
-            this.labelXunidad.Location = new System.Drawing.Point(998, 118);
+            this.labelXunidad.Location = new System.Drawing.Point(449, 115);
             this.labelXunidad.Name = "labelXunidad";
             this.labelXunidad.Size = new System.Drawing.Size(137, 33);
             this.labelXunidad.TabIndex = 0;
@@ -325,7 +325,7 @@
             this.labelTotal_descrip.BackColor = System.Drawing.Color.Transparent;
             this.labelTotal_descrip.Font = new System.Drawing.Font("Segoe MDL2 Assets", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotal_descrip.ForeColor = System.Drawing.Color.White;
-            this.labelTotal_descrip.Location = new System.Drawing.Point(1347, 117);
+            this.labelTotal_descrip.Location = new System.Drawing.Point(691, 115);
             this.labelTotal_descrip.Name = "labelTotal_descrip";
             this.labelTotal_descrip.Size = new System.Drawing.Size(99, 33);
             this.labelTotal_descrip.TabIndex = 0;
@@ -337,9 +337,9 @@
             this.listBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 30;
-            this.listBox2.Location = new System.Drawing.Point(163, 151);
+            this.listBox2.Location = new System.Drawing.Point(123, 151);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(831, 904);
+            this.listBox2.Size = new System.Drawing.Size(333, 694);
             this.listBox2.TabIndex = 0;
             // 
             // listBox3
@@ -348,9 +348,9 @@
             this.listBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 30;
-            this.listBox3.Location = new System.Drawing.Point(993, 151);
+            this.listBox3.Location = new System.Drawing.Point(456, 151);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(150, 904);
+            this.listBox3.Size = new System.Drawing.Size(131, 694);
             this.listBox3.TabIndex = 0;
             // 
             // listBox4
@@ -359,9 +359,9 @@
             this.listBox4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 30;
-            this.listBox4.Location = new System.Drawing.Point(1140, 151);
+            this.listBox4.Location = new System.Drawing.Point(577, 151);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(164, 904);
+            this.listBox4.Size = new System.Drawing.Size(89, 694);
             this.listBox4.TabIndex = 0;
             // 
             // listBox5
@@ -370,9 +370,9 @@
             this.listBox5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox5.FormattingEnabled = true;
             this.listBox5.ItemHeight = 30;
-            this.listBox5.Location = new System.Drawing.Point(1301, 151);
+            this.listBox5.Location = new System.Drawing.Point(665, 151);
             this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(201, 904);
+            this.listBox5.Size = new System.Drawing.Size(151, 694);
             this.listBox5.TabIndex = 0;
             // 
             // labelEmpleado
@@ -380,7 +380,7 @@
             this.labelEmpleado.AutoSize = true;
             this.labelEmpleado.Font = new System.Drawing.Font("Century Gothic", 35.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmpleado.ForeColor = System.Drawing.Color.White;
-            this.labelEmpleado.Location = new System.Drawing.Point(589, 36);
+            this.labelEmpleado.Location = new System.Drawing.Point(376, 36);
             this.labelEmpleado.Name = "labelEmpleado";
             this.labelEmpleado.Size = new System.Drawing.Size(466, 57);
             this.labelEmpleado.TabIndex = 0;
@@ -392,7 +392,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(164)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(1876, 1080);
+            this.ClientSize = new System.Drawing.Size(1209, 875);
             this.Controls.Add(this.labelEmpleado);
             this.Controls.Add(this.listBox5);
             this.Controls.Add(this.listBox4);
@@ -421,7 +421,6 @@
             this.Name = "CajaPantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pantalla_caja";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Pantalla_caja_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.boxLogo)).EndInit();
             this.ResumeLayout(false);
