@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecomax", "Ecomax\Ecomax.csproj", "{1BD192D7-F69D-4DB7-B0B7-E50339E86090}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C2_Controlador", "C2_Controlador\C2_Controlador.csproj", "{7F3F433D-D66D-4970-9378-86F7F9AE6030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C3_BD", "C3_BD\C3_BD.csproj", "{DB55E9D4-E988-49C9-A1F6-646A10F6921E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C4_Class", "C4_Class\C4_Class.csproj", "{DFE7039D-3EF4-4299-AA89-B77DAA794195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C1_Ecomax", "C1_Ecomax\C1_Ecomax.csproj", "{1BD192D7-F69D-4DB7-B0B7-E50339E86090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +17,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F3F433D-D66D-4970-9378-86F7F9AE6030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3F433D-D66D-4970-9378-86F7F9AE6030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3F433D-D66D-4970-9378-86F7F9AE6030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3F433D-D66D-4970-9378-86F7F9AE6030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB55E9D4-E988-49C9-A1F6-646A10F6921E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB55E9D4-E988-49C9-A1F6-646A10F6921E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB55E9D4-E988-49C9-A1F6-646A10F6921E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB55E9D4-E988-49C9-A1F6-646A10F6921E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE7039D-3EF4-4299-AA89-B77DAA794195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE7039D-3EF4-4299-AA89-B77DAA794195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE7039D-3EF4-4299-AA89-B77DAA794195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE7039D-3EF4-4299-AA89-B77DAA794195}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1BD192D7-F69D-4DB7-B0B7-E50339E86090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1BD192D7-F69D-4DB7-B0B7-E50339E86090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BD192D7-F69D-4DB7-B0B7-E50339E86090}.Release|Any CPU.ActiveCfg = Release|Any CPU

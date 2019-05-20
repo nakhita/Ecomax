@@ -1,0 +1,6 @@
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\bin\Debug\C4_Class.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\bin\Debug\C4_Class.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Debug\C4_Class.csprojAssemblyReference.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Debug\C4_Class.csproj.CoreCompileInputs.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Debug\C4_Class.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Debug\C4_Class.pdb

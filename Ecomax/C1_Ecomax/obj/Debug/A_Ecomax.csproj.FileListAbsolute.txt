@@ -1,0 +1,10 @@
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\A_Ecomax.csprojAssemblyReference.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Login.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Modo_Pago.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Num_caja.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.CajaPantalla.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.Properties.Resources.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\A_Ecomax.csproj.GenerateResource.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\A_Ecomax.csproj.CoreCompileInputs.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.exe
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\Ecomax\obj\Debug\Ecomax.pdb
