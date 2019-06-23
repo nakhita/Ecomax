@@ -43,17 +43,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbPeso = new System.Windows.Forms.ComboBox();
             this.boxPeso = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.boxPrecio = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label8 = new System.Windows.Forms.Label();
             this.cbProveedor = new System.Windows.Forms.ComboBox();
-            this.cbSucursal = new System.Windows.Forms.ComboBox();
+            this.cbProveedorNP = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +71,7 @@
             this.btnhacer_pedido.TabIndex = 4;
             this.btnhacer_pedido.Text = "HACER PEDIDO";
             this.btnhacer_pedido.UseVisualStyleBackColor = false;
+            this.btnhacer_pedido.Click += new System.EventHandler(this.Btnhacer_pedido_Click);
             this.btnhacer_pedido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
             // btncrear_producto
@@ -92,6 +90,7 @@
             this.btncrear_producto.TabIndex = 10;
             this.btncrear_producto.Text = "CREAR PRODUCTO";
             this.btncrear_producto.UseVisualStyleBackColor = false;
+            this.btncrear_producto.Click += new System.EventHandler(this.Btncrear_producto_Click);
             this.btncrear_producto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
             // cbProducto
@@ -140,11 +139,11 @@
             // labelEmpleado
             // 
             this.labelEmpleado.AutoSize = true;
-            this.labelEmpleado.Font = new System.Drawing.Font("Century Gothic", 25.15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmpleado.Font = new System.Drawing.Font("Century Gothic", 15.15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmpleado.ForeColor = System.Drawing.Color.White;
-            this.labelEmpleado.Location = new System.Drawing.Point(390, 67);
+            this.labelEmpleado.Location = new System.Drawing.Point(469, 82);
             this.labelEmpleado.Name = "labelEmpleado";
-            this.labelEmpleado.Size = new System.Drawing.Size(324, 40);
+            this.labelEmpleado.Size = new System.Drawing.Size(201, 25);
             this.labelEmpleado.TabIndex = 0;
             this.labelEmpleado.Text = "No me pierdo mas";
             this.labelEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,7 +172,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(369, 304);
+            this.label2.Location = new System.Drawing.Point(388, 302);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 27);
             this.label2.TabIndex = 0;
@@ -181,7 +180,7 @@
             // 
             // boxNombre
             // 
-            this.boxNombre.Location = new System.Drawing.Point(493, 310);
+            this.boxNombre.Location = new System.Drawing.Point(521, 309);
             this.boxNombre.Name = "boxNombre";
             this.boxNombre.Size = new System.Drawing.Size(240, 20);
             this.boxNombre.TabIndex = 5;
@@ -192,7 +191,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(369, 350);
+            this.label3.Location = new System.Drawing.Point(400, 369);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 27);
             this.label3.TabIndex = 0;
@@ -201,7 +200,7 @@
             // cbPeso
             // 
             this.cbPeso.FormattingEnabled = true;
-            this.cbPeso.Location = new System.Drawing.Point(612, 356);
+            this.cbPeso.Location = new System.Drawing.Point(640, 376);
             this.cbPeso.Name = "cbPeso";
             this.cbPeso.Size = new System.Drawing.Size(121, 21);
             this.cbPeso.TabIndex = 7;
@@ -209,41 +208,11 @@
             // 
             // boxPeso
             // 
-            this.boxPeso.Location = new System.Drawing.Point(493, 356);
+            this.boxPeso.Location = new System.Drawing.Point(521, 376);
             this.boxPeso.Name = "boxPeso";
             this.boxPeso.Size = new System.Drawing.Size(113, 20);
             this.boxPeso.TabIndex = 6;
             this.boxPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(369, 401);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 27);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "PRECIO";
-            // 
-            // boxPrecio
-            // 
-            this.boxPrecio.Location = new System.Drawing.Point(493, 408);
-            this.boxPrecio.Name = "boxPrecio";
-            this.boxPrecio.Size = new System.Drawing.Size(240, 20);
-            this.boxPrecio.TabIndex = 8;
-            this.boxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(468, 401);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 27);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "$";
             // 
             // label6
             // 
@@ -255,17 +224,6 @@
             this.label6.Size = new System.Drawing.Size(218, 27);
             this.label6.TabIndex = 0;
             this.label6.Text = "NUEVO PRODUCTO";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(363, 437);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 27);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "SUCURSAL";
             // 
             // btnActualizar
             // 
@@ -324,14 +282,25 @@
             this.cbProveedor.TabIndex = 3;
             this.cbProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
-            // cbSucursal
+            // cbProveedorNP
             // 
-            this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.Location = new System.Drawing.Point(493, 443);
-            this.cbSucursal.Name = "cbSucursal";
-            this.cbSucursal.Size = new System.Drawing.Size(240, 21);
-            this.cbSucursal.TabIndex = 9;
-            this.cbSucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
+            this.cbProveedorNP.FormattingEnabled = true;
+            this.cbProveedorNP.Location = new System.Drawing.Point(521, 450);
+            this.cbProveedorNP.Name = "cbProveedorNP";
+            this.cbProveedorNP.Size = new System.Drawing.Size(240, 21);
+            this.cbProveedorNP.TabIndex = 9;
+            this.cbProveedorNP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe MDL2 Assets", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(369, 444);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 27);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "PROVEEDOR";
             // 
             // PantallaStock
             // 
@@ -339,15 +308,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(164)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1166, 568);
-            this.Controls.Add(this.cbSucursal);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbProveedorNP);
             this.Controls.Add(this.cbProveedor);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.boxPrecio);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.boxPeso);
             this.Controls.Add(this.cbPeso);
             this.Controls.Add(this.label3);
@@ -392,16 +358,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbPeso;
         private System.Windows.Forms.TextBox boxPeso;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox boxPrecio;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnActualizar;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbProveedor;
-        private System.Windows.Forms.ComboBox cbSucursal;
+        private System.Windows.Forms.ComboBox cbProveedorNP;
+        private System.Windows.Forms.Label label4;
     }
 }

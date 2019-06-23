@@ -11,6 +11,8 @@ namespace C3_BD
 {
     public class Stock_BD : conexion_BD
     {
+        List<int> IDProv = new List<int>();
+
         public int ObtenerCantiArtBD() {
             int canti = 0;
             try
@@ -54,28 +56,7 @@ namespace C3_BD
 
             return canti;
         }
-        public int ObtenerCantiSucBD()
-        {
-            int canti = 0;
-            try
-            {
 
-                if (IsConnect())
-                {
-                    string cadena = "Select COUNT(ID_scr) from Sucursal";
-                    cmd = new SqlCommand(cadena, conexion);
-                    canti = (int)cmd.ExecuteScalar();
-                    Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-
-            }
-
-            return canti;
-        }
         public List<string> ObtArticulos_BD() {
             List<string> Art = new List<string>();
             try
@@ -107,13 +88,18 @@ namespace C3_BD
             {
                 if (IsConnect())
                 {
-                    string cadena = "Select nombre from Proveedor";
+                    int ID;
+                    string cadena = "Select ID_prov,nombre from Proveedor";
                     cmd = new SqlCommand(cadena, conexion);
                     dr = cmd.ExecuteReader();
+                    
                     while (dr.Read())
                     {
+                        ID = (int)dr["ID_prov"];
                         Prov.Add(dr["nombre"].ToString());
+                        IDProv.Add(ID);
                     }
+
                     dr.Close();
                     Close();
                 }
@@ -127,32 +113,35 @@ namespace C3_BD
             return Prov;
         }
 
-
-        public List<string> ObtSucursal_BD()
-        {
-            List<string> Suc = new List<string>();
-            try
-            {
-                if (IsConnect())
+        public int CrearProducto_BD(string Nombre, int Peso, string kg, int Proveedor) {
+            int ok = 0;
+                try
                 {
-                    string cadena = "Select ID_scr,Nombre,Localidad from Sucursal";
-                    cmd = new SqlCommand(cadena, conexion);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    if (IsConnect())
                     {
-                        Suc.Add(dr["ID_scr"].ToString() + " " + dr["Nombre"].ToString() + "-" + dr["Localidad"].ToString());
+                        int retorno;
+                        string cadena = "insert into Producto(descripcion, peso, simbpeso, ID_prov) values(@descripcion,@peso,@simbpeso,@ID_prov); ";
+                        cmd = new SqlCommand(cadena, conexion);
+                        cmd.Parameters.AddWithValue("@descripcion", Nombre);
+                        cmd.Parameters.AddWithValue("@peso", Peso);
+                        cmd.Parameters.AddWithValue("@simbpeso", kg);
+                        cmd.Parameters.AddWithValue("@ID_prov", Proveedor);
+                        retorno = cmd.ExecuteNonQuery();
+                        Console.WriteLine("Retorno" + retorno.ToString());
+                        ok = 1;
+                        Close();
                     }
-                    dr.Close();
-                    Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-
-            }
-
-            return Suc;
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    return ok;
+                }
+             
+            return ok;
+        }
+        public List<int> ObtIDProv_BD() {
+            return IDProv;     
         }
     }
 }

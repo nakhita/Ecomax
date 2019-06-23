@@ -20,12 +20,6 @@ namespace C2_Controlador
             ComboBox = S_BD.ObtProveedor_BD();
             return ComboBox;
         }
-        public List<string> ObtSucursal()
-        {
-            List<string> ComboBox = new List<string>();
-            ComboBox = S_BD.ObtSucursal_BD();
-            return ComboBox;
-        }
         
         public int ObtenerCantiArt() {
             int canti = S_BD.ObtenerCantiArtBD();
@@ -39,9 +33,16 @@ namespace C2_Controlador
         }
 
 
-        public int ObtenerCantiSuc(){
-            int canti = S_BD.ObtenerCantiSucBD();
-            return canti;
+        public int CrearProducto(string Nombre, int Peso, string kg,int Proveedor) {
+            int ok = 0;
+            ok = S_BD.CrearProducto_BD(Nombre, Peso, kg, Proveedor);
+            return ok;
+        }
+        public List<int> ObtIDProv()
+        {
+            List <int> IDProv = new List<int>();
+            IDProv = S_BD.ObtIDProv_BD();
+            return IDProv;
         }
 
     }
