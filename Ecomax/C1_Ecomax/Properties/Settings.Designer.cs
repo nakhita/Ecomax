@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ecomax.Properties {
+namespace C1_Ecomax.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Ecomax
+namespace C1_Ecomax
 {
     static class Program
     {

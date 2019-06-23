@@ -13,17 +13,26 @@ namespace C1_Ecomax
     public partial class PantallaStock : Form
     {
         PantallaStockControlador PSC;
+        Eventos E;
+        
         public PantallaStock()
         {
             InitializeComponent();
             PSC = new PantallaStockControlador();
+            E = new Eventos(this);
         }
-
+        private void RellenarCombox(ComboBox cb) {
+            int cant = PSC.ObtenerCanti(); 
+            List<string> Art=new List<string>();
+            Art = PSC.ObtenerArticulos();
+            E.RellenarComboxST(cant, cb, Art);
+        }
         private void PantallaStock_Load(object sender, EventArgs e)
         {
-            int canti = PSC.ObtenerCanti();
-            string[] Box = new string[canti];
-            Box = PSC.RellenarComboBox();
+
+
+            
+
         }
     }
 }

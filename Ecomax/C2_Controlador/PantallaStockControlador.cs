@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using C2_Controlador;
+
 
 namespace C2_Controlador
 {
-    public class PantallaStockControlador
+    public class PantallaStockControlador : Controlador
     {
-        public string[] RellenarComboBox() {
-            int canti = ObtenerCanti();
-            string[] ComboBox = new string[canti];
+
+        public List<string> ObtenerArticulos() {
+
+            List<string> ComboBox = new List<string>();
+            ComboBox = S_BD.ObtArticulos_BD();
             return ComboBox;
         }
         public int ObtenerCanti() {
-            int canti = 0; //ObtenerCantiBD();
+            int canti = S_BD.ObtenerCantiBD();
             return canti;
         }
     }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using C2_Controlador;
 
-namespace Ecomax
+namespace C1_Ecomax
 {
     public partial class Num_caja : Form
     {

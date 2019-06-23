@@ -1,4 +1,4 @@
-﻿namespace Ecomax
+﻿namespace C1_Ecomax
 {
     partial class Login
     {

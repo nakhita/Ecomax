@@ -26,6 +26,7 @@ namespace C3_BD
                     cmd.Parameters.AddWithValue("@ID_mp", ID_mp); 
                     //cmd.Parameters.AddWithValue("@Getdate",texto );
                     retorno = cmd.ExecuteNonQuery();
+                    Console.WriteLine("Retorno" + retorno.ToString());
                     Close();
                 }
             }

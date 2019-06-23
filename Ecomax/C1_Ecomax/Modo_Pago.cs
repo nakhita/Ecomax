@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using C2_Controlador;
 
 
-namespace Ecomax
+namespace C1_Ecomax
 {
     public partial class Modo_Pago : Form
     {

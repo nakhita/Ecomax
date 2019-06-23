@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 
 
-namespace Ecomax
+namespace C1_Ecomax
 {
     class Eventos
     {
@@ -105,6 +105,13 @@ namespace Ecomax
             e.Handled = true;
             SendKeys.Send("{TAB}");
         }
-        
+        public void RellenarComboxST(int cant,ComboBox cb,List<string>Art)
+        {
+            for (int i = 0; i < cant; i++)
+            {
+                cb.Items.Add(Art[i]);
+            }
+        }
+
     }
 }

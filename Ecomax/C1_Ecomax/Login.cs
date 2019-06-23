@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using C2_Controlador;
 using C4_Class;
 
-namespace Ecomax
+namespace C1_Ecomax
 {
     public partial class Login : Form
     {
@@ -20,6 +20,9 @@ namespace Ecomax
         private string us = "USUARIO";
         private string ps = "CONTRASEÑA";
         CajaControlador C_BD;
+        PantallaStock Stock;
+        PantallaJefe P_Jefe;
+        TesoreriaPantalla P_Teso;
 
         public Login()
         {
@@ -28,7 +31,10 @@ namespace Ecomax
             BD = new UsuarioControlador();
             C_BD = new CajaControlador();
             Caja = new Num_caja();
-            
+            Stock = new PantallaStock();
+            P_Jefe = new PantallaJefe();
+            P_Teso = new TesoreriaPantalla();
+
         }
 
         private void boton_entrar_click(object sender, EventArgs e)
@@ -43,9 +49,9 @@ namespace Ecomax
                 switch (categoria)
                 {
                     case 1: E.Abrir_otroForm(sender, e, Caja); break; //Cajero
-                    case 2: E.cartel("Ser abriría la pantalla de la "); break; //Stock
-                    case 3: E.cartel("Ser abriría la pantalla de la Categoria 3"); break; //Tesoria
-                    case 4: E.cartel("Ser abriría la pantalla de la Categoria 4"); break; //Jefe
+                    case 2: E.Abrir_otroForm(sender, e, Stock); break; //Stock
+                    case 3: E.Abrir_otroForm(sender, e, P_Teso); break; //Tesoria
+                    case 4: E.Abrir_otroForm(sender, e, P_Jefe); break; //Jefe
                     case 9999: E.cartel("Sucedió un error, Lo sentimos :("); break;
                 }
 

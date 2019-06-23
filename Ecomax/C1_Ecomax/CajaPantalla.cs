@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using C2_Controlador;
 using C4_Class;
 
-namespace Ecomax
+namespace C1_Ecomax
 {
     public partial class CajaPantalla : Form
     {

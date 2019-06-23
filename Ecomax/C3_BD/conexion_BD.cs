@@ -12,7 +12,7 @@ namespace C3_BD
     {
         protected SqlConnection conexion = null;
         protected SqlCommand cmd;
-        /*protected SqlDataReader dr;*/
+        protected SqlDataReader dr;
         
         protected bool IsConnect(){
             try{
