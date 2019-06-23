@@ -18,8 +18,8 @@ namespace C3_BD
             try{
                 if (conexion==null){
 
-                    //conexion = new SqlConnection("Data Source=BABYDADA\\SQLEXPRESS;Initial Catalog=marketBD;User ID=market;Password=admin123");
-                    conexion = new SqlConnection("Data Source=marketbd.mssql.somee.com;Initial Catalog=marketbd;User ID=ecomax;Password=P@ssw0rd1");
+                    conexion = new SqlConnection("Data Source=BABYDADA\\SQLEXPRESS;Initial Catalog=marketBD;User ID=market;Password=admin123");
+                    //conexion = new SqlConnection("Data Source=marketbd.mssql.somee.com;Initial Catalog=marketbd;User ID=ecomax;Password=P@ssw0rd1");
                 }
                 conexion.Open();
                 

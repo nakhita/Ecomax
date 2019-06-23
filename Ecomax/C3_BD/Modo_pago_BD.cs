@@ -16,13 +16,15 @@ namespace C3_BD
                 if (IsConnect())
                 {
                     int retorno;
+                    string texto = "GETDATE()";
                     //insert into Venta(Ticket, monto, n_comp, ID_mp) values(12345678901234,10005.50,12345678,1);
-                    string cadena = "insert into Venta(Ticket, monto, n_comp, ID_mp) values(@Ticket,@monto,@n_comp,@ID_mp); ";
+                    string cadena = "insert into Venta(Ticket, monto, n_comp, ID_mp,fecha) values(@Ticket,@monto,@n_comp,@ID_mp,GETDATE()); ";
                     cmd = new SqlCommand(cadena, conexion);
                     cmd.Parameters.AddWithValue("@Ticket", Ticket);
                     cmd.Parameters.AddWithValue("@monto", monto);
                     cmd.Parameters.AddWithValue("@n_comp", n_comp);
-                    cmd.Parameters.AddWithValue("@ID_mp", ID_mp);
+                    cmd.Parameters.AddWithValue("@ID_mp", ID_mp); 
+                    //cmd.Parameters.AddWithValue("@Getdate",texto );
                     retorno = cmd.ExecuteNonQuery();
                     Close();
                 }

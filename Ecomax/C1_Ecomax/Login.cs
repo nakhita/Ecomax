@@ -42,10 +42,10 @@ namespace Ecomax
                 int categoria = UserGlobal.DATOS.Categoria;
                 switch (categoria)
                 {
-                    case 1: E.Abrir_otroForm(sender, e, Caja); break;
-                    case 2: E.cartel("Ser abriría la pantalla de la Categoria 2"); break;
-                    case 3: E.cartel("Ser abriría la pantalla de la Categoria 3"); break;
-                    case 4: E.cartel("Ser abriría la pantalla de la Categoria 4"); break;
+                    case 1: E.Abrir_otroForm(sender, e, Caja); break; //Cajero
+                    case 2: E.cartel("Ser abriría la pantalla de la "); break; //Stock
+                    case 3: E.cartel("Ser abriría la pantalla de la Categoria 3"); break; //Tesoria
+                    case 4: E.cartel("Ser abriría la pantalla de la Categoria 4"); break; //Jefe
                     case 9999: E.cartel("Sucedió un error, Lo sentimos :("); break;
                 }
 

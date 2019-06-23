@@ -78,6 +78,7 @@ Ticket bigint not null,
 monto decimal (11,2) not null,
 n_comp int default 0,
 ID_mp int not null,
+fecha datetime not null,
 primary key(Ticket),
 constraint fk_Venta_ModoPago_1
 Foreign key (ID_mp) references ModoPago (ID_mp)
@@ -92,19 +93,31 @@ insert into Sucursal(ID_scr,Nombre, Localidad)
 values (70,'Dias','Monte grande');
 
 insert into Categoria(Nombre)
-values ('sistema');
+values ('Cajero');
 insert into Categoria(Nombre)
-values ('administracion');
+values ('Repositor');
+insert into Categoria(Nombre)
+values ('Tesoreria');
+insert into Categoria(Nombre)
+values ('Gerencia');
 
 insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
 values (12345678,'Ramon','Gonzalez',1,123);
 insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
 values (87654321,'Hector','Fiaz',2,70);
+insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
+values (11223344,'David','Gonzalez',3,123);
+insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
+values (44332211,'Dalma','Che',4,70);
 
 insert into Usuario(ID_user,Pass)
 values(12345678,'hola');
 insert into Usuario(ID_user,Pass)
 values(87654321,'chau');
+insert into Usuario(ID_user,Pass)
+values(11223344,'hola');
+insert into Usuario(ID_user,Pass)
+values(44332211,'chau')
 
 insert into Proveedor(nombre,telefono)
 values ('Arcor',45678948);
@@ -145,14 +158,14 @@ values ('Tarjeta de Credito');
 insert into ModoPago(nombre)
 values ('Tarjeta de Debito');
 
-/*
-insert into Venta(Ticket,monto,n_comp,ID_mp)
-values (12345678901234,10005.50,12345678,1);
-insert into Venta(Ticket,monto,n_comp,ID_mp)
-values (12345678911234,10005.50,12345678,2);
-insert into Venta(Ticket,monto,n_comp,ID_mp)
-values (1234567921234,10005.50,12345678,3);
-*/
+
+insert into Venta(Ticket,monto,n_comp,ID_mp,fecha)
+values (12345678901234,10005.50,0,1,GETDATE());
+insert into Venta(Ticket,monto,n_comp,ID_mp,fecha)
+values (12345678911234,10005.50,12345678,2,GETDATE());
+insert into Venta(Ticket,monto,n_comp,ID_mp,fecha)
+values (1234567921234,10005.50,12345678,3,GETDATE());
+
 
 /*Selects*/
 select * from Usuario;
@@ -164,8 +177,6 @@ select * from Producto;
 select * from Proveedor;
 select * from Venta;
 select * from ModoPago;
-
-
 
 /*Drops*/
 
@@ -179,5 +190,4 @@ drop table Producto;
 drop table Proveedor;
 drop table Venta;
 drop table ModoPago;
-
 */

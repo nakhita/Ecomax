@@ -38,3 +38,6 @@ D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\bin\Debug\C3_B
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Debug\C1_Ecomax.csproj.CopyComplete
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Debug\C1_Ecomax.exe
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Debug\C1_Ecomax.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Debug\C1_Ecomax.PantallaJefe.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Debug\C1_Ecomax.PantallaStock.resources
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Debug\C1_Ecomax.TesoreriaPantalla.resources
