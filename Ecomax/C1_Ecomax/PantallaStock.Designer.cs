@@ -139,11 +139,11 @@
             // labelEmpleado
             // 
             this.labelEmpleado.AutoSize = true;
-            this.labelEmpleado.Font = new System.Drawing.Font("Century Gothic", 15.15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmpleado.Font = new System.Drawing.Font("Century Gothic", 20.15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmpleado.ForeColor = System.Drawing.Color.White;
-            this.labelEmpleado.Location = new System.Drawing.Point(469, 82);
+            this.labelEmpleado.Location = new System.Drawing.Point(451, 75);
             this.labelEmpleado.Name = "labelEmpleado";
-            this.labelEmpleado.Size = new System.Drawing.Size(201, 25);
+            this.labelEmpleado.Size = new System.Drawing.Size(258, 32);
             this.labelEmpleado.TabIndex = 0;
             this.labelEmpleado.Text = "No me pierdo mas";
             this.labelEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -164,7 +164,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(786, 44);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(334, 456);
+            this.dataGridView1.Size = new System.Drawing.Size(368, 456);
             this.dataGridView1.TabIndex = 0;
             // 
             // label2
@@ -235,7 +235,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(862, 516);
+            this.btnActualizar.Location = new System.Drawing.Point(909, 516);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(171, 40);
             this.btnActualizar.TabIndex = 11;

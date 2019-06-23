@@ -178,6 +178,10 @@ select * from Proveedor;
 select * from Venta;
 select * from ModoPago;
 
+/*Contador*/
+
+Select COUNT(Cod_art) from Producto;
+
 /*Drops*/
 
 /*
