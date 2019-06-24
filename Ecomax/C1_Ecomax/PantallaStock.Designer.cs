@@ -98,6 +98,7 @@
             // 
             // cbProducto
             // 
+            this.cbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProducto.FormattingEnabled = true;
             this.cbProducto.Location = new System.Drawing.Point(31, 280);
             this.cbProducto.Name = "cbProducto";
@@ -202,6 +203,7 @@
             // 
             // cbPeso
             // 
+            this.cbPeso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPeso.FormattingEnabled = true;
             this.cbPeso.Location = new System.Drawing.Point(640, 376);
             this.cbPeso.Name = "cbPeso";
@@ -288,6 +290,7 @@
             // 
             // cbProveedor
             // 
+            this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProveedor.FormattingEnabled = true;
             this.cbProveedor.Location = new System.Drawing.Point(521, 450);
             this.cbProveedor.Name = "cbProveedor";

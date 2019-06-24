@@ -183,11 +183,9 @@ select * from ModoPago;
 Select COUNT(Cod_art) from Producto;
 
 select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art;
-select PS.cantidad from Producto P inner join Producto_Sucursal PS on P.Cod_art = PS.Cod_art where P.Cod_art = 9 and PS.ID_scr =123
-select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art
-update Producto_Sucursal 
-set precio=15 
-where ID_scr = 70  and Cod_art= 1;
+select PS.cantidad from Producto P inner join Producto_Sucursal PS on P.Cod_art = PS.Cod_art where P.Cod_art = 9 and PS.ID_scr =123;
+select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art;
+update Producto_Sucursal set precio=15 where ID_scr = 70  and Cod_art= 1;
 
 /*Drops*/
 
