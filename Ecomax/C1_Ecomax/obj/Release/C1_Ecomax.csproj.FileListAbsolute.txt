@@ -23,3 +23,5 @@ D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Release\C1
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Release\C1_Ecomax.csproj.CopyComplete
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Release\C1_Ecomax.exe
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\obj\Release\C1_Ecomax.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\bin\Release\C1_Ecomax.exe.CodeAnalysisLog.xml
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C1_Ecomax\bin\Release\C1_Ecomax.exe.lastcodeanalysissucceeded

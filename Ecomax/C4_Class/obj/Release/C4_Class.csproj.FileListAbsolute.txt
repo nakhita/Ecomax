@@ -3,3 +3,4 @@ D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\bin\Release\C4_
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Release\C4_Class.csproj.CoreCompileInputs.cache
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Release\C4_Class.dll
 D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Release\C4_Class.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C4_Class\obj\Release\C4_Class.csprojAssemblyReference.cache
