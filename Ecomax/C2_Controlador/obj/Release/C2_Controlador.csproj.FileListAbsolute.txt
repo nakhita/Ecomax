@@ -1,0 +1,11 @@
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\bin\Release\C2_Controlador.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\bin\Release\C2_Controlador.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\bin\Release\C3_BD.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\bin\Release\C4_Class.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\bin\Release\C3_BD.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\bin\Release\C4_Class.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\obj\Release\C2_Controlador.csprojAssemblyReference.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\obj\Release\C2_Controlador.csproj.CoreCompileInputs.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\obj\Release\C2_Controlador.csproj.CopyComplete
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\obj\Release\C2_Controlador.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C2_Controlador\obj\Release\C2_Controlador.pdb

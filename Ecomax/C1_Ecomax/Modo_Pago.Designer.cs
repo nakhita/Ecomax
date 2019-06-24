@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modo_Pago));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +52,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(128, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 57);
+            this.label1.Size = new System.Drawing.Size(367, 56);
             this.label1.TabIndex = 0;
             this.label1.Text = "Modo de pago";
             // 
@@ -62,7 +63,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(40, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 23);
+            this.label2.Size = new System.Drawing.Size(116, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "1. Efectivo ";
             // 
@@ -73,7 +74,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(207, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 23);
+            this.label3.Size = new System.Drawing.Size(175, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "2. Tarjeta Credito";
             // 
@@ -84,7 +85,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(435, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 23);
+            this.label4.Size = new System.Drawing.Size(167, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "3. Tarjeta Debito";
             // 
@@ -106,7 +107,7 @@
             this.labelPago_tarjeta.ForeColor = System.Drawing.Color.White;
             this.labelPago_tarjeta.Location = new System.Drawing.Point(32, 303);
             this.labelPago_tarjeta.Name = "labelPago_tarjeta";
-            this.labelPago_tarjeta.Size = new System.Drawing.Size(311, 23);
+            this.labelPago_tarjeta.Size = new System.Drawing.Size(283, 23);
             this.labelPago_tarjeta.TabIndex = 0;
             this.labelPago_tarjeta.Text = "Ingrese N° de comprobante";
             this.labelPago_tarjeta.Visible = false;
@@ -130,7 +131,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(180, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 33);
+            this.label5.Size = new System.Drawing.Size(115, 32);
             this.label5.TabIndex = 0;
             this.label5.Text = "TOTAL $";
             // 
@@ -141,7 +142,7 @@
             this.labelPrecio_total.ForeColor = System.Drawing.Color.Black;
             this.labelPrecio_total.Location = new System.Drawing.Point(327, 92);
             this.labelPrecio_total.Name = "labelPrecio_total";
-            this.labelPrecio_total.Size = new System.Drawing.Size(118, 33);
+            this.labelPrecio_total.Size = new System.Drawing.Size(112, 32);
             this.labelPrecio_total.TabIndex = 0;
             this.labelPrecio_total.Text = "PRECIO";
             // 
@@ -152,7 +153,7 @@
             this.labelPago_efectivo.ForeColor = System.Drawing.Color.White;
             this.labelPago_efectivo.Location = new System.Drawing.Point(32, 303);
             this.labelPago_efectivo.Name = "labelPago_efectivo";
-            this.labelPago_efectivo.Size = new System.Drawing.Size(304, 46);
+            this.labelPago_efectivo.Size = new System.Drawing.Size(276, 46);
             this.labelPago_efectivo.TabIndex = 0;
             this.labelPago_efectivo.Text = "Ingrese con cuanto paga $\r\n\r\n";
             this.labelPago_efectivo.Visible = false;
@@ -164,7 +165,7 @@
             this.pago_efectivo2.ForeColor = System.Drawing.Color.Black;
             this.pago_efectivo2.Location = new System.Drawing.Point(159, 366);
             this.pago_efectivo2.Name = "pago_efectivo2";
-            this.pago_efectivo2.Size = new System.Drawing.Size(141, 33);
+            this.pago_efectivo2.Size = new System.Drawing.Size(135, 32);
             this.pago_efectivo2.TabIndex = 0;
             this.pago_efectivo2.Text = "VUELTO $";
             this.pago_efectivo2.Visible = false;
@@ -176,7 +177,7 @@
             this.labelPrecio_vuelto.ForeColor = System.Drawing.Color.Black;
             this.labelPrecio_vuelto.Location = new System.Drawing.Point(318, 366);
             this.labelPrecio_vuelto.Name = "labelPrecio_vuelto";
-            this.labelPrecio_vuelto.Size = new System.Drawing.Size(125, 33);
+            this.labelPrecio_vuelto.Size = new System.Drawing.Size(120, 32);
             this.labelPrecio_vuelto.TabIndex = 0;
             this.labelPrecio_vuelto.Text = "VUELTO ";
             this.labelPrecio_vuelto.Visible = false;
@@ -188,7 +189,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(196, 134);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 23);
+            this.label6.Size = new System.Drawing.Size(67, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "Ticket";
             // 
@@ -199,7 +200,7 @@
             this.labelTicket.ForeColor = System.Drawing.Color.Black;
             this.labelTicket.Location = new System.Drawing.Point(302, 134);
             this.labelTicket.Name = "labelTicket";
-            this.labelTicket.Size = new System.Drawing.Size(154, 23);
+            this.labelTicket.Size = new System.Drawing.Size(142, 23);
             this.labelTicket.TabIndex = 0;
             this.labelTicket.Text = "000000000000";
             // 
@@ -224,6 +225,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Modo_Pago";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

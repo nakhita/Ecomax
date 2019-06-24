@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C4_Class", "C4_Class\C4_Cla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C1_Ecomax", "C1_Ecomax\C1_Ecomax.csproj", "{1BD192D7-F69D-4DB7-B0B7-E50339E86090}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador_Ecomax", "Instalador_Ecomax\Instalador_Ecomax.vdproj", "{16DD2B27-DDB8-43F5-94B6-374469F42386}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{1BD192D7-F69D-4DB7-B0B7-E50339E86090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BD192D7-F69D-4DB7-B0B7-E50339E86090}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BD192D7-F69D-4DB7-B0B7-E50339E86090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16DD2B27-DDB8-43F5-94B6-374469F42386}.Debug|Any CPU.ActiveCfg = Debug
+		{16DD2B27-DDB8-43F5-94B6-374469F42386}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

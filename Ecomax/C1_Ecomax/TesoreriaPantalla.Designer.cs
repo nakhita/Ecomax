@@ -98,6 +98,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgReporte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TesoreriaPantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TesoreriaPantalla";

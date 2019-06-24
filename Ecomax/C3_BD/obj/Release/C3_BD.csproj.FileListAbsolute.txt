@@ -1,0 +1,9 @@
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\bin\Release\C3_BD.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\bin\Release\C3_BD.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\bin\Release\C4_Class.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\bin\Release\C4_Class.pdb
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\obj\Release\C3_BD.csprojAssemblyReference.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\obj\Release\C3_BD.csproj.CoreCompileInputs.cache
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\obj\Release\C3_BD.csproj.CopyComplete
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\obj\Release\C3_BD.dll
+D:\Universidad\Tecnicas de programacion\Proyecto\Ecomax\C3_BD\obj\Release\C3_BD.pdb

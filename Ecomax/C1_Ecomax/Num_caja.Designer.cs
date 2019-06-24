@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Num_caja));
             this.label1 = new System.Windows.Forms.Label();
             this.boxCaja = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -39,7 +40,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 36);
+            this.label1.Size = new System.Drawing.Size(246, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Numero de caja";
             // 
@@ -66,6 +67,7 @@
             this.Controls.Add(this.boxCaja);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Num_caja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Num_caja";
