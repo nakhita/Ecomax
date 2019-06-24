@@ -18,7 +18,6 @@ namespace C1_Ecomax
         {
             this.form = form;
         }
-        
 
         public string obtener_datos_text(System.Windows.Forms.TextBox box)
         {

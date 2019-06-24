@@ -41,9 +41,11 @@
   <ItemGroup>
     <Compile Include="Caja_BD.cs" />
     <Compile Include="conexion_BD.cs" />
+    <Compile Include="Empleado_BD.cs" />
     <Compile Include="Modo_pago_BD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stock_BD.cs" />
+    <Compile Include="Tesoreria_BD.cs" />
     <Compile Include="Usuario_BD.cs" />
   </ItemGroup>
   <ItemGroup>

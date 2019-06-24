@@ -41,10 +41,12 @@
   <ItemGroup>
     <Compile Include="CajaControlador.cs" />
     <Compile Include="Controlador.cs" />
+    <Compile Include="EmpleadoControlador.cs" />
     <Compile Include="Modo_PagoControlador.cs" />
     <Compile Include="Num_cajaControlador.cs" />
     <Compile Include="PantallaStockControlador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TesoreriaControlador.cs" />
     <Compile Include="UsuarioControlador.cs" />
   </ItemGroup>
   <ItemGroup>

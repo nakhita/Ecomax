@@ -16,11 +16,13 @@ namespace C1_Ecomax
         PantallaStockControlador PSC;
         Eventos E;
         string vacio = "";
+        DataTable Tabla;
         public PantallaStock()
         {
             InitializeComponent();
             PSC = new PantallaStockControlador();
             E = new Eventos(this);
+            Tabla = new DataTable();
         }
         private void RellenarCbArt(ComboBox cb) {
             int cant = PSC.ObtenerCantiArt(); 
@@ -30,38 +32,80 @@ namespace C1_Ecomax
             cb.SelectedIndex = 0;
         }
 
-        //<----------------------////
         private void RellenarCbProveedor(ComboBox cb)
         {
             int cant = PSC.ObtenerCantiProv();
-            List<string> Art = new List<string>();
-            Art = PSC.ObtenerProveedor();
-            E.RellenarComboxST(cant, cb, Art);
+            List<string> Prov = new List<string>();
+            Prov = PSC.ObtenerProveedor();
+            E.RellenarComboxST(cant, cb, Prov);
             cb.SelectedIndex = 0;
         }
 
-        //<----------------------////
         private void RellenarCbPeso(ComboBox cb)
         {
 
-            List<string> Art = new List<string>();
-            Art.Add("kg");
-            Art.Add("gr");
-            Art.Add("cm3");
-            Art.Add("lt");
-            Art.Add("ml");
-            int cant = Art.Count();
-            E.RellenarComboxST(cant, cb, Art);
+            List<string> Peso = new List<string>();
+            Peso.Add("kg");
+            Peso.Add("gr");
+            Peso.Add("cm3");
+            Peso.Add("lt");
+            Peso.Add("ml");
+            Peso.Add("u");
+            int cant = Peso.Count();
+            E.RellenarComboxST(cant, cb, Peso);
             cb.SelectedIndex = 0;
         }
-       
-        private void Btnhacer_pedido_Click(object sender, EventArgs e)
+        private void RellenarCbSucursal(ComboBox cb)
         {
-            string Producto = cbProducto.SelectedItem.ToString();
-            int Cant = Convert.ToInt32(E.obtener_datos_text(boxCant));
-            string Proveedor = cbProveedor.SelectedItem.ToString();
-            //Se "manda por email" Fuera del alcance del proyecto
-            E.cartel("Se hizo un pedido a" + Proveedor + " Por " + Cant + " " + Producto);
+            int cant = PSC.ObtenerCantiSuc();
+            List<string> Suc = new List<string>();
+            Suc = PSC.ObtSucursal();
+            E.RellenarComboxST(cant, cb, Suc);
+            cb.SelectedIndex = 0;
+        }
+
+
+        private void Btnagregar_producto_Click(object sender, EventArgs e)
+        {
+            string ProductoST = cbProducto.SelectedItem.ToString();
+            string CantST = E.obtener_datos_text(boxCant);
+            string SucursalST = cbSucursal.SelectedItem.ToString();
+            string PrecioST = E.obtener_datos_text(boxPrecio);
+            if (ProductoST != vacio && CantST != vacio && SucursalST != vacio)
+            {
+                double precio;
+                if (PrecioST == vacio)
+                {
+                    precio = 0;
+                }
+                else {
+                    precio = Convert.ToDouble(PrecioST);
+                }
+                int cant = Convert.ToInt32(CantST);
+                int itemP = cbProducto.SelectedIndex;
+                int itemS = cbSucursal.SelectedIndex;
+                List<int> IDSuc = new List<int>();
+                List<int> IDArt = new List<int>();
+                IDSuc = PSC.ObtIDSucr();
+                IDArt = PSC.ObtIDArt();
+                Console.WriteLine("Precio:" + precio.ToString());
+                Console.WriteLine("itemP:" + itemP.ToString());
+                Console.WriteLine("itemS:" + itemS.ToString());
+                Console.WriteLine("IDSuc:" + IDSuc[itemS].ToString());
+                Console.WriteLine("IDArt:" + IDArt[itemP].ToString());
+
+                bool ok = PSC.AgregarArt(IDArt[itemP], cant, precio, IDSuc[itemS]);
+                if (ok)
+                {
+                    E.cartel("Se actualizó la cantidad");
+                    clear();
+                }
+                else
+                {
+                    E.cartel("ERROR");
+                    clear();
+                }
+            }
             clear();
         }
 
@@ -69,10 +113,11 @@ namespace C1_Ecomax
             boxCant.Clear();
             boxNombre.Clear();
             boxPeso.Clear();
+            boxPrecio.Clear();
             cbProducto.SelectedIndex = 0;
-            cbProveedor.SelectedIndex = 0;
+            cbSucursal.SelectedIndex = 0;
             cbPeso.SelectedIndex = 0;
-            cbProveedorNP.SelectedIndex = 0;
+            cbProveedor.SelectedIndex = 0;
            
         }
         private void Btncrear_producto_Click(object sender, EventArgs e)
@@ -80,17 +125,18 @@ namespace C1_Ecomax
             string Nombre = E.obtener_datos_text(boxNombre);
             string PesoST = E.obtener_datos_text(boxPeso);
             string kg = cbPeso.SelectedItem.ToString();
-            string Proveedor = cbProveedorNP.SelectedItem.ToString();
+            string Proveedor = cbProveedor.SelectedItem.ToString();
 
             if (Nombre != vacio && PesoST != vacio && kg != vacio && Proveedor != vacio)
             {
                 int Peso = Convert.ToInt32(PesoST);
-                int item = cbProveedorNP.SelectedIndex;
+                int item = cbProveedor.SelectedIndex;
                 List<int> IDProv = new List<int>();
                 IDProv = PSC.ObtIDProv();
                 Console.WriteLine(IDProv[item].ToString());
 
                 int ok = PSC.CrearProducto(Nombre, Peso, kg, IDProv[item]);
+
                 if (ok == 1)
                 {
                     E.cartel("Se creo nuevo Producto");
@@ -109,15 +155,47 @@ namespace C1_Ecomax
             }
         }
 
+        private void Actualizar()
+        {
+            Tabla.Rows.Clear();
+            dgProductos.Refresh();
+            Tabla = PSC.ObtenerProductoDT();
+            dgProductos.DataSource = Tabla;
+            dgProductos.Columns[0].HeaderText = "N° Articulo";
+            dgProductos.Columns[0].Visible = true;
+
+            dgProductos.Columns[1].HeaderText = "Nombre";
+            dgProductos.Columns[1].Visible = true;
+
+            dgProductos.Columns[2].HeaderText = "Peso";
+            dgProductos.Columns[2].Visible = true;
+
+            dgProductos.Columns[3].HeaderText = "Medida";
+            dgProductos.Columns[3].Visible = true;
+
+            dgProductos.Columns[4].HeaderText = "Cantidad";
+            dgProductos.Columns[4].Visible = true;
+
+            dgProductos.Columns[5].HeaderText = "ID_Sucursal";
+            dgProductos.Columns[5].Visible = true;
+
+
+            dgProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            Actualizar();
+        }
         private void Key_Press(object sender, KeyPressEventArgs e)
         {
 
             int key = E.Key_press_global(sender, e);
             if (key == 1)
             {
-                if (btnhacer_pedido.Focused)
+                if (btnagregar_producto.Focused)
                 {
-                   Btnhacer_pedido_Click(sender, e);
+                   Btnagregar_producto_Click(sender, e);
                 }
                 else if (btncrear_producto.Focused)
                 {
@@ -125,7 +203,7 @@ namespace C1_Ecomax
                 }
                 else if (btnActualizar.Focused)
                 {
-
+                    BtnActualizar_Click(sender, e);
                 }
                 else {
                     E.tab(sender, e);
@@ -134,6 +212,8 @@ namespace C1_Ecomax
             }
 
         }
+
+
         private void Mover(object sender, MouseEventArgs e)
         {
             E.Mover_pantalla(sender, e);
@@ -143,13 +223,14 @@ namespace C1_Ecomax
         private void PantallaStock_Load(object sender, EventArgs e)
         {
             RellenarCbArt(cbProducto);
-            RellenarCbProveedor(cbProveedor);
+            RellenarCbSucursal(cbSucursal);
             RellenarCbPeso(cbPeso);
-            RellenarCbProveedor(cbProveedorNP);
+            RellenarCbProveedor(cbProveedor);
+            Actualizar();
             labelEmpleado.Text = UserGlobal.DATOS.Apellido + " " + UserGlobal.DATOS.Nombre;
 
         }
 
-
+        
     }
 }

@@ -47,7 +47,7 @@ create table Producto(
 	Cod_art int not null identity (1,1),
 	descripcion varchar(50) not null,
 	peso int not null,
-	simbpeso varchar(2) not null,
+	simbpeso varchar(3) not null,
 	ID_prov int not null,
 	primary key(Cod_art),
 	constraint fk_Stock_Proveedor_1
@@ -181,6 +181,13 @@ select * from ModoPago;
 /*Contador*/
 
 Select COUNT(Cod_art) from Producto;
+
+select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art;
+select PS.cantidad from Producto P inner join Producto_Sucursal PS on P.Cod_art = PS.Cod_art where P.Cod_art = 9 and PS.ID_scr =123
+select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art
+update Producto_Sucursal 
+set precio=15 
+where ID_scr = 70  and Cod_art= 1;
 
 /*Drops*/
 

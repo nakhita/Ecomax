@@ -13,7 +13,10 @@ namespace C3_BD
         protected SqlConnection conexion = null;
         protected SqlCommand cmd;
         protected SqlDataReader dr;
-        
+        protected SqlDataAdapter adapt;
+        protected DataTable dt;
+
+
         protected bool IsConnect(){
             try{
                 if (conexion==null){
@@ -35,14 +38,6 @@ namespace C3_BD
             conexion.Close();
         }
 
-       
-        
-        /*public string CrearEmpleado(int legajo, string nombre, string apellido, int ID_ct, int ID_scr ) {
-            if (IsConnect()){
-                cmd = new SqlCommand("Insert into Empleado (Legajo,Nombre,Apellido,ID_ct,ID_scr) values (" + legajo + ",'" + nombre + "','" + apellido + "'," + ID_ct + "," + ID_scr + ")",conexion);
-                Close();
-            }
-            
-        }*/
+
     }
 }
