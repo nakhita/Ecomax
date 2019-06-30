@@ -122,13 +122,13 @@ insert into Categoria(Nombre)
 values ('Gerencia');
 
 insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
-values (12345678,'Ramon','Gonzalez',1,123);
+values (12345678,'Cajero','SR',1,123);
 insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
-values (87654321,'Hector','Fiaz',2,70);
+values (87654321,'Repositor','SR',2,70);
 insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
-values (11223344,'David','Gonzalez',3,123);
+values (11223344,'Tesorera','SRA',3,123);
 insert into Empleado(Legajo,Nombre,Apellido,ID_ct,ID_scr)
-values (44332211,'Dalma','Che',4,70);
+values (44332211,'Gerente','SR',4,70);
 
 insert into Usuario(ID_user,Pass)
 values(12345678,'hola');
@@ -186,8 +186,7 @@ values (12345678911234,10005.50,12345678,2,GETDATE(),70);
 insert into Venta(Ticket,monto,n_comp,ID_mp,fecha,ID_scr)
 values (1234567921234,10005.50,12345678,3,GETDATE(),123);
 
-insert into Venta(Ticket, monto, n_comp, ID_mp,fecha,ID_scr) 
-values(12345678901000,30.50,0,1,GETDATE(),70);
+
 /*Selects*/
 select * from Usuario;
 select * from Empleado;

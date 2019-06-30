@@ -14,13 +14,15 @@ namespace C1_Ecomax
     public partial class TesoreriaPantalla : Form
     {
         Eventos E;
-        DataTable Tabla;
+        DataTable TablaGeneral;
+        DataTable TablaDetalle;
         TesoreriaControlador TC;
 
         public TesoreriaPantalla()
         {
             InitializeComponent();
-            Tabla = new DataTable();
+            TablaGeneral = new DataTable();
+            TablaDetalle = new DataTable();
             E = new Eventos(this);
             TC = new TesoreriaControlador();
         }
@@ -34,7 +36,7 @@ namespace C1_Ecomax
             filter.Append(string.Format(" OR CONVERT({0}, System.String) LIKE '%{1}%'", "nombre", txtBuscar.Text));
             filter.Append(string.Format(" OR CONVERT({0}, System.String) LIKE '%{1}%'", "fecha", txtBuscar.Text));
 
-            Tabla.DefaultView.RowFilter = filter.ToString();
+            TablaGeneral.DefaultView.RowFilter = filter.ToString();
         }
         private void Key_Press(object sender, KeyPressEventArgs e)
         {
@@ -44,10 +46,11 @@ namespace C1_Ecomax
 
             private void Actualizar()
         {
-            Tabla.Rows.Clear();
+            TablaGeneral.Rows.Clear();
             dgReporte.Refresh();
-            Tabla = TC.ObtenerReporteDT();
-            dgReporte.DataSource = Tabla;
+            TablaGeneral = TC.ObtenerReporteDT();
+            dgReporte.DataSource = TablaGeneral;
+            dgReporte.DataSource = TablaGeneral;
             dgReporte.Columns[0].HeaderText = "N° Ticket";
             dgReporte.Columns[0].Visible = true;
 
@@ -63,9 +66,57 @@ namespace C1_Ecomax
             dgReporte.Columns[4].HeaderText = "Fecha";
             dgReporte.Columns[4].Visible = true;
 
+            DataGridViewButtonColumn dgBtneditar = new DataGridViewButtonColumn();
+            dgBtneditar.Name = "Detalle";
+            dgBtneditar.Text = "Ver";
+            dgBtneditar.UseColumnTextForButtonValue = true;
+            dgBtneditar.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            int columnIndex = 5;
+            if (dgReporte.Columns["Ver"] == null)
+            {
+                dgReporte.Columns.Insert(columnIndex, dgBtneditar);
+            }
+
             dgReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgReporte.Columns["Detalle"].Index)
+            {
+                BindingManagerBase bm = dgReporte.BindingContext[dgReporte.DataSource, dgReporte.DataMember];
+                DataRow dr = ((DataRowView)bm.Current).Row;
+                long ticket = (long)dr[0];
+
+                TablaDetalle.Rows.Clear();
+                dgDetalle.Refresh();
+                TablaDetalle = TC.ObtenerDetalleDT(ticket);
+                dgDetalle.DataSource = TablaDetalle;
+                dgDetalle.DataSource = TablaDetalle;
+
+                dgDetalle.Columns[0].HeaderText = "N° Articulo";
+                dgDetalle.Columns[0].Visible = true;
+
+                dgDetalle.Columns[1].HeaderText = "Descripción";
+                dgDetalle.Columns[1].Visible = true;
+
+                dgDetalle.Columns[2].HeaderText = "$xUnidad";
+                dgDetalle.Columns[2].Visible = true;
+
+                dgDetalle.Columns[3].HeaderText = "Cantidad";
+                dgDetalle.Columns[3].Visible = true;
+
+                dgDetalle.Columns[4].HeaderText = "Total";
+                dgDetalle.Columns[4].Visible = true;
+
+                dgDetalle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                E.cartel("Se cargaron el detalle del ticket : " + ticket);
+            }
+        }
+
+
         private void Mover(object sender, MouseEventArgs e)
         {
             E.Mover_pantalla(sender, e);

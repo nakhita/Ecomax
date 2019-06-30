@@ -23,5 +23,18 @@ namespace C3_BD
             }
             return dt;
         }
+        public DataTable ObtenerDetalle_BD(long ticket)
+        {
+            dt = new DataTable();
+            if (IsConnect())
+            {
+                Console.WriteLine(ticket.ToString());
+                string cadena = "select Cod_art,descripcion,p_unidad,cantidad,total from Detalle where Ticket= '" + ticket + "';";
+                adapt = new SqlDataAdapter(cadena, conexion);
+                adapt.Fill(dt);
+                Close();
+            }
+            return dt;
+        }
     }
 }
