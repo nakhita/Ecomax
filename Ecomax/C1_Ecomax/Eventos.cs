@@ -86,6 +86,19 @@ namespace C1_Ecomax
 
         }
         /**/
+        public int Key_press_global(object sender, KeyPressEventArgs e,bool login) {
+            key = 0;
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                key = 1;
+            }
+            else if (e.KeyChar == Convert.ToChar(Keys.Escape))
+            {
+                form.Close();
+            }
+            return key;
+        }
+
         public int Key_press_global(object sender, KeyPressEventArgs e) {
             key = 0;
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -117,6 +130,11 @@ namespace C1_Ecomax
             {
                 Login login = new Login();
                 Abrir_otroForm(sender, e, login);
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm != login)
+                        frm.Hide();
+                }
             }
         }
 

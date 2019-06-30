@@ -71,7 +71,7 @@ namespace C1_Ecomax
         }
         private void Key_Press(object sender, KeyPressEventArgs e)
         {
-            int key = E.Key_press_global(sender, e);
+            int key = E.Key_press_global(sender, e,true);
             if (key == 1){
                 boton_entrar_click(sender, e);
             }

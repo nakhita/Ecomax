@@ -41,6 +41,13 @@ namespace C1_Ecomax
             p_caja = pantalla_caja;
         }
         private void Validar_enter(object sender, KeyPressEventArgs e) {
+            if (E.obtener_datos_text(boxModoPago) == "." || E.obtener_datos_text(boxTarjVuelto) == ".") {
+                DialogResult dialogResult = MessageBox.Show("Esta seguro de cancelar la venta?", "Cancelar venta", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.Hide();
+                }
+            }
             if (boxTarjVuelto.Visible == false)
             {
                 Verificar_ModoPago(sender,e);
@@ -48,7 +55,6 @@ namespace C1_Ecomax
             else if (boxTarjVuelto.Visible == true)
             {
                 Verificar_DatosPago();
-
 
             }
         }
