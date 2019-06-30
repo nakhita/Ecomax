@@ -54,8 +54,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.boxPrecio = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnagregar_producto
@@ -111,7 +113,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(358, 120);
+            this.pictureBox1.Size = new System.Drawing.Size(755, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -145,7 +147,7 @@
             this.labelEmpleado.AutoSize = true;
             this.labelEmpleado.Font = new System.Drawing.Font("Century Gothic", 20.15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmpleado.ForeColor = System.Drawing.Color.White;
-            this.labelEmpleado.Location = new System.Drawing.Point(451, 75);
+            this.labelEmpleado.Location = new System.Drawing.Point(223, 165);
             this.labelEmpleado.Name = "labelEmpleado";
             this.labelEmpleado.Size = new System.Drawing.Size(258, 32);
             this.labelEmpleado.TabIndex = 0;
@@ -166,9 +168,9 @@
             // dgProductos
             // 
             this.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProductos.Location = new System.Drawing.Point(786, 44);
+            this.dgProductos.Location = new System.Drawing.Point(786, 47);
             this.dgProductos.Name = "dgProductos";
-            this.dgProductos.Size = new System.Drawing.Size(368, 456);
+            this.dgProductos.Size = new System.Drawing.Size(368, 463);
             this.dgProductos.TabIndex = 0;
             // 
             // label2
@@ -339,12 +341,24 @@
             this.boxPrecio.TabIndex = 2;
             this.boxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Key_Press);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1117, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            // 
             // PantallaStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(164)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1166, 568);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.boxPrecio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -378,6 +392,7 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mover);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,5 +425,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox boxPrecio;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

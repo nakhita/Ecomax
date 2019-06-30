@@ -60,12 +60,13 @@ namespace C1_Ecomax
             dgEmpleados.Columns[7].Visible = true;
 
             dgEmpleados.Columns[8].HeaderText = "Password";
-            dgEmpleados.Columns[8].Visible = true;
+            dgEmpleados.Columns[8].Visible = false;
 
             DataGridViewButtonColumn dgBtneditar = new DataGridViewButtonColumn();
             dgBtneditar.Name = "Editar";
             dgBtneditar.Text = "Editar";
             dgBtneditar.UseColumnTextForButtonValue = true;
+            dgBtneditar.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             int columnIndex = 9;
             if (dgEmpleados.Columns["Editar"] == null)
             {
@@ -76,6 +77,7 @@ namespace C1_Ecomax
             dgBtnEliminar.Name = "Eliminar";
             dgBtnEliminar.Text = "Eliminar";
             dgBtnEliminar.UseColumnTextForButtonValue = true;
+            dgBtnEliminar.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             columnIndex = 10;
             if (dgEmpleados.Columns["Eliminar"] == null)
             {
@@ -198,8 +200,9 @@ namespace C1_Ecomax
         {
             if (e.ColumnIndex == dgEmpleados.Columns["Editar"].Index)
             {
-                DataRow dr = dt.Rows[e.RowIndex];
-                int legajo = (int) dr[0];
+                BindingManagerBase bm = dgEmpleados.BindingContext[dgEmpleados.DataSource, dgEmpleados.DataMember];
+                DataRow dr = ((DataRowView) bm.Current).Row;
+                int legajo = (int)dr[0];
                 txtLegajo.Text = dr[0].ToString();
                 txtNombre.Text = dr[1].ToString();
                 txtApellido.Text = dr[2].ToString();
@@ -216,12 +219,19 @@ namespace C1_Ecomax
                 esNuevo = false;
                 txtLegajo.Enabled = false;
                 E.cartel("Se cargaron los datos del empleado con legajo : " + legajo);
-            } else if(e.ColumnIndex == dgEmpleados.Columns["Eliminar"].Index)
+            } else if (e.ColumnIndex == dgEmpleados.Columns["Eliminar"].Index)
             {
-                int legajo = (int) dt.Rows[e.RowIndex][0];
-                int resultado = Emp_Controlador.Eliminar_Empleado(legajo);
-                E.cartel("Se elimino al empleado con legajo : " + legajo);
-                Cargar_Empleado();
+                BindingManagerBase bm = dgEmpleados.BindingContext[dgEmpleados.DataSource, dgEmpleados.DataMember];
+                DataRow dr = ((DataRowView)bm.Current).Row;
+                int legajo = (int) dr[0];
+
+                DialogResult dialogResult = MessageBox.Show("Esta seguro de eliminar al empleado con legajo " + legajo + "?", "Eliminar Empleado", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int resultado = Emp_Controlador.Eliminar_Empleado(legajo);
+                    E.cartel("Se elimino al empleado con legajo : " + legajo);
+                    Cargar_Empleado();
+                }
             }
         }
 
@@ -230,6 +240,16 @@ namespace C1_Ecomax
             txtLegajo.Enabled = true;
             esNuevo = true;
             Limpiar();
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            E.CerrarSesion(sender, e);
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

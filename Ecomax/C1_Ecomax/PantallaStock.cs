@@ -231,6 +231,9 @@ namespace C1_Ecomax
 
         }
 
-        
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            E.CerrarSesion(sender, e);
+        }
     }
 }

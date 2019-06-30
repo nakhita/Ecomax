@@ -19,10 +19,14 @@ namespace C1_Ecomax
         private bool error_MPago = false;
         private bool ok_R = false;
         private bool ok_D = false;
+        private bool ok_Det = false;
         private object[] RegistrarVenta;
         private List<int> ls_DescCant;
         private List<int> ls_DescArt;
         private string vacio = "";
+        private List<string> ls_Desc;
+        private List<double> ls_Pxcant;
+        private List<double> ls_Total;
 
         
         public Modo_Pago()
@@ -141,8 +145,9 @@ namespace C1_Ecomax
                 RegistrarVenta[2] = 0;
                 RegistrarVenta[3] = Convert.ToInt32(boxModoPago.Text);
                 ok_R = MP_ctrl.RegistrarVenta(RegistrarVenta);
+                ok_Det = MP_ctrl.RegistrarDetalle(ls_DescArt,ls_Desc,ls_Pxcant,ls_DescCant,ls_Total, Convert.ToInt64(RegistrarVenta[0]));
                 ok_D = MP_ctrl.DescontarCant(ls_DescArt, ls_DescCant);
-                if (ok_R && ok_D)
+                if (ok_R && ok_Det && ok_D)
                 {
                     E.cartel("Compra registrada.");
                     error_MPago = false;
@@ -173,8 +178,9 @@ namespace C1_Ecomax
                     RegistrarVenta[2] = Convert.ToInt32(boxTarjVuelto.Text);
                     RegistrarVenta[3] = Convert.ToInt32(boxModoPago.Text);
                     ok_R = MP_ctrl.RegistrarVenta(RegistrarVenta);
+                    ok_Det = MP_ctrl.RegistrarDetalle(ls_DescArt, ls_Desc, ls_Pxcant, ls_DescCant, ls_Total,Convert.ToInt64(RegistrarVenta[0]));
                     ok_D = MP_ctrl.DescontarCant(ls_DescArt, ls_DescCant);
-                    if (ok_R && ok_D)
+                    if (ok_R && ok_Det && ok_D)
                     {
                         E.cartel("Compra registrada.");
                         error_MPago = false;
@@ -210,7 +216,7 @@ namespace C1_Ecomax
             return error_MPago;
         }
 
-        private void Reinicio(object[] registro, List<int> lsArt_descP, List<int> lsCant_descP) {
+        private void Reinicio(object[] registro, List<int> lsArt_descP, List<int> lsCant_descP,List<string> lsdesP, List<double> lspxcantP, List<double> lstotalP) {
             boxModoPago.Clear();
             boxModoPago.Enabled = true;
             SendKeys.Send("{TAB}");
@@ -224,15 +230,21 @@ namespace C1_Ecomax
             RegistrarVenta = new object[4];
             ls_DescCant = new List<int>();
             ls_DescArt = new List<int>();
+            ls_Desc = new List<string>();
+            ls_Pxcant = new List<double>();
+            ls_Total = new List<double>();
             ls_DescArt = lsArt_descP;
             ls_DescCant = lsCant_descP;
+            ls_Desc = lsdesP;
+            ls_Pxcant = lspxcantP;
+            ls_Total = lstotalP;
             RegistrarVenta = registro;
             labelTicket.Text = registro[0].ToString();
             labelPrecio_total.Text = registro[1].ToString();
         }
-        public void Mostrar(Form Padre,object[] registro, List<int> lsArt_desc, List<int> lsCant_desc)
+        public void Mostrar(Form Padre,object[] registro, List<int> lsArt_desc, List<int> lsCant_desc, List<string> lsdes, List<double> lspxcant,List<double> lstotal)
         {
-            Reinicio(registro, lsArt_desc, lsCant_desc);
+            Reinicio(registro, lsArt_desc, lsCant_desc, lsdes, lspxcant, lstotal);
             this.ShowDialog(Padre);
             
         }

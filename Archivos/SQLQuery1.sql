@@ -79,10 +79,30 @@ monto decimal (11,2) not null,
 n_comp int default 0,
 ID_mp int not null,
 fecha datetime not null,
+ID_scr int not null,
 primary key(Ticket),
+constraint fk_Detalle_Sucursal_1
+Foreign key (ID_scr) references Sucursal (ID_scr),
 constraint fk_Venta_ModoPago_1
 Foreign key (ID_mp) references ModoPago (ID_mp)
 );
+
+create table Detalle(
+ID_det bigint identity (1,1) not null,
+Cod_art int not null,
+descripcion varchar(100) not null,
+P_unidad decimal(10,2) not null,
+cantidad int not null,
+total decimal(38,2) not null,
+Ticket bigint not null,
+primary key(ID_det),
+constraint fk_Detalle_Venta_1
+Foreign key(Ticket) references Venta(Ticket),
+constraint fk_Detalle_Producto
+Foreign key(Cod_art) references Producto(Cod_art)
+);
+
+
 
 /*Inserts*/
 
@@ -159,14 +179,15 @@ insert into ModoPago(nombre)
 values ('Tarjeta de Debito');
 
 
-insert into Venta(Ticket,monto,n_comp,ID_mp,fecha)
-values (12345678901234,10005.50,0,1,GETDATE());
-insert into Venta(Ticket,monto,n_comp,ID_mp,fecha)
-values (12345678911234,10005.50,12345678,2,GETDATE());
-insert into Venta(Ticket,monto,n_comp,ID_mp,fecha)
-values (1234567921234,10005.50,12345678,3,GETDATE());
+insert into Venta(Ticket,monto,n_comp,ID_mp,fecha,ID_scr)
+values (12345678901234,10005.50,0,1,GETDATE(),70);
+insert into Venta(Ticket,monto,n_comp,ID_mp,fecha,ID_scr)
+values (12345678911234,10005.50,12345678,2,GETDATE(),70);
+insert into Venta(Ticket,monto,n_comp,ID_mp,fecha,ID_scr)
+values (1234567921234,10005.50,12345678,3,GETDATE(),123);
 
-
+insert into Venta(Ticket, monto, n_comp, ID_mp,fecha,ID_scr) 
+values(12345678901000,30.50,0,1,GETDATE(),70);
 /*Selects*/
 select * from Usuario;
 select * from Empleado;
@@ -177,6 +198,7 @@ select * from Producto;
 select * from Proveedor;
 select * from Venta;
 select * from ModoPago;
+select * from Detalle;
 
 /*Contador*/
 
@@ -185,7 +207,7 @@ Select COUNT(Cod_art) from Producto;
 select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art;
 select PS.cantidad from Producto P inner join Producto_Sucursal PS on P.Cod_art = PS.Cod_art where P.Cod_art = 9 and PS.ID_scr =123;
 select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art;
-update Producto_Sucursal set precio=15 where ID_scr = 70  and Cod_art= 1;
+update Producto_Sucursal set precio=15 where ID_scr = 123  and Cod_art= 1;
 
 /*Drops*/
 
@@ -194,6 +216,7 @@ drop table Usuario;
 drop table Empleado;
 drop table Categoria;
 drop table Producto_Sucursal;
+drop table Detalle;
 drop table Sucursal;
 drop table Producto;
 drop table Proveedor;

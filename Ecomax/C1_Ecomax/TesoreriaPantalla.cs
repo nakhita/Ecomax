@@ -75,5 +75,10 @@ namespace C1_Ecomax
             Actualizar();
             labelEmpleado.Text = UserGlobal.DATOS.Apellido + " " + UserGlobal.DATOS.Nombre;
         }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            E.CerrarSesion(sender, e);
+        }
     }
 }

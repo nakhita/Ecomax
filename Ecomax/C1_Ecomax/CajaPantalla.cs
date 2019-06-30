@@ -21,7 +21,10 @@ namespace C1_Ecomax
         private List<int> lista = new List<int>();
         private List<int> Art_desc = new List<int>();
         private List<int> Cant_desc = new List<int>();
-        object[] registro;
+        private List<double> pxcant = new List<double>();
+        private List<double> art_total = new List<double>();
+        private List<string> descripcion = new List<string>();
+        private object[] registro;
         public List<int> lsArt_desc
         {
             get { return Art_desc; }
@@ -30,6 +33,17 @@ namespace C1_Ecomax
         public List<int> lsCant_desc
         {
             get { return Cant_desc; }
+        }
+        public List<string> lsdes {
+            get { return descripcion; }
+        }
+        public List<double> lspxcant
+        {
+            get { return pxcant; }
+        }
+        public List<double> lstotal
+        {
+            get { return art_total; }
         }
 
         public CajaPantalla()
@@ -129,7 +143,7 @@ namespace C1_Ecomax
                     long ticket = Convert.ToInt64(DateTime.Now.ToString("yyMMddhhmmssff"));
                     RegistrarVenta(ticket, Convert.ToDouble(boxTotal.Text));
                     CargarListas();
-                    M_pago.Mostrar(this,registro,lsArt_desc,lsCant_desc);
+                    M_pago.Mostrar(this,registro,lsArt_desc,lsCant_desc, lsdes, lspxcant, lstotal);
                     bool error = M_pago.error();
                     if (!error) {
                         reinicio();
@@ -145,7 +159,8 @@ namespace C1_Ecomax
                     {
                         if (cant > 0)
                         {
-                            string[] aux = C_BD.ObtenerPrecio(art, UserGlobal.DATOS.ID_scr, cant);
+                            string[] aux = new string[3];
+                            aux = C_BD.ObtenerPrecio(art, UserGlobal.DATOS.ID_scr, cant);
                             descripcion = aux[0]; // descripcion
                             precio = Convert.ToDouble(aux[1]); // precio
 
@@ -181,7 +196,10 @@ namespace C1_Ecomax
             int i = 0;
             for (i = 0; i < cant; i++) {
                 lsArt_desc.Add(lista[i]);
+                lsdes.Add(listBox2.Items[i].ToString());
+                lspxcant.Add(Convert.ToDouble(listBox3.Items[i]));
                 lsCant_desc.Add(Convert.ToInt32(listBox4.Items[i]));
+                lstotal.Add(Convert.ToDouble(listBox5.Items[i]));
             }
         }
         public void set_caja(int n_caja) {
@@ -236,6 +254,7 @@ namespace C1_Ecomax
                     E.tab(sender, e);
                 }
             }
+            
 
         }
 
@@ -245,6 +264,9 @@ namespace C1_Ecomax
             lista.Clear();
             lsArt_desc.Clear();
             lsCant_desc.Clear();
+            lsdes.Clear();
+            lspxcant.Clear();
+            lstotal.Clear();
             limpiar();
             Total = 0;
             boxStotal.Text = "0.00";

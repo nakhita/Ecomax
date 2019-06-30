@@ -10,21 +10,49 @@ namespace C3_BD
 {
     public class Modo_pago_BD : conexion_BD
     {
-        public bool RegistrarVentaBD(long Ticket,double monto, int n_comp, int ID_mp) {
+        public bool RegistrarVentaBD(long Ticket,double monto, int n_comp, int ID_mp,int ID_scr) {
             try
             {
                 if (IsConnect())
                 {
                     int retorno;
-                    string cadena = "insert into Venta(Ticket, monto, n_comp, ID_mp,fecha) values(@Ticket,@monto,@n_comp,@ID_mp,GETDATE()); ";
+                    string cadena = "insert into Venta(Ticket, monto, n_comp, ID_mp,fecha,ID_scr) values(@Ticket,@monto,@n_comp,@ID_mp,GETDATE(),@ID_scr); ";
                     cmd = new SqlCommand(cadena, conexion);
                     cmd.Parameters.AddWithValue("@Ticket", Ticket);
                     cmd.Parameters.AddWithValue("@monto", monto);
                     cmd.Parameters.AddWithValue("@n_comp", n_comp);
-                    cmd.Parameters.AddWithValue("@ID_mp", ID_mp); 
+                    cmd.Parameters.AddWithValue("@ID_mp", ID_mp);
+                    cmd.Parameters.AddWithValue("@ID_scr", ID_scr);
                     //cmd.Parameters.AddWithValue("@Getdate",texto );
                     retorno = cmd.ExecuteNonQuery();
                     Console.WriteLine("Retorno" + retorno.ToString());
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            return true;
+        }
+        
+        public bool RegistrarDetalleBD(int Cod_art, string descripcion, double p_unidad, int cantidad, double total, long Ticket)
+        {
+            try
+            {
+                if (IsConnect())
+                {
+                    int retorno;
+                    string cadena = "insert into Detalle(Cod_art, descripcion, p_unidad, cantidad, total, Ticket) values(@Cod_art,@descripcion,@p_unidad,@cantidad,@total,@Ticket); ";
+                    cmd = new SqlCommand(cadena, conexion);
+                    cmd.Parameters.AddWithValue("@Cod_art", Cod_art);
+                    cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                    cmd.Parameters.AddWithValue("@p_unidad", p_unidad);
+                    cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@total", total);
+                    cmd.Parameters.AddWithValue("@Ticket", Ticket);
+                    retorno = cmd.ExecuteNonQuery();
                     Close();
                 }
             }

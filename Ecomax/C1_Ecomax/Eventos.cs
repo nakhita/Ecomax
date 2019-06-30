@@ -94,8 +94,7 @@ namespace C1_Ecomax
             }
             else if (e.KeyChar == Convert.ToChar(Keys.Escape))
             {
-                form.Close();
-
+                CerrarSesion(sender, e);
             }
             return key;
         }
@@ -109,6 +108,15 @@ namespace C1_Ecomax
             for (int i = 0; i < cant; i++)
             {
                 cb.Items.Add(Art[i]);
+            }
+        }
+
+        public void CerrarSesion(object sender, EventArgs e) {
+            DialogResult dialogResult = MessageBox.Show("Esta seguro de cerrar sesion?", "Cerrar sesion", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Login login = new Login();
+                Abrir_otroForm(sender, e, login);
             }
         }
 
