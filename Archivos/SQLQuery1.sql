@@ -182,10 +182,16 @@ values ('Tarjeta de Debito');
 insert into Venta(Ticket,monto,n_comp,ID_mp,fecha,ID_scr)
 values (12345678901234,10005.50,0,1,GETDATE(),70);
 insert into Venta(Ticket,monto,n_comp,ID_mp,fecha,ID_scr)
-values (12345678911234,10005.50,12345678,2,GETDATE(),70);
+values (12345678911235,10005.50,12345678,2,GETDATE(),70);
 insert into Venta(Ticket,monto,n_comp,ID_mp,fecha,ID_scr)
-values (1234567921234,10005.50,12345678,3,GETDATE(),123);
+values (12345679212340,10005.50,12345678,3,GETDATE(),123);
 
+insert into Detalle(Cod_art, descripcion, p_unidad, cantidad, total, Ticket) 
+values(1,'Arroz 1kg',16.50,1,16.50,12345678901234);
+insert into Detalle(Cod_art, descripcion, p_unidad, cantidad, total, Ticket) 
+values(2,'Pure 500ml',12.50,1,12.50,12345678911235);
+insert into Detalle(Cod_art, descripcion, p_unidad, cantidad, total, Ticket) 
+values(3,'Fideo 500gr',10.25,1,10.25,12345679212340);
 
 /*Selects*/
 select * from Usuario;
@@ -199,14 +205,19 @@ select * from Venta;
 select * from ModoPago;
 select * from Detalle;
 
+
 /*Contador*/
 
+/*
 Select COUNT(Cod_art) from Producto;
-
 select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art;
 select PS.cantidad from Producto P inner join Producto_Sucursal PS on P.Cod_art = PS.Cod_art where P.Cod_art = 9 and PS.ID_scr =123;
 select P.Cod_art, P.descripcion, P.peso,P.simbpeso,PS.cantidad,PS.ID_scr from Producto P INNER JOIN Producto_Sucursal PS ON P.Cod_art = PS.Cod_art;
 update Producto_Sucursal set precio=15 where ID_scr = 123  and Cod_art= 1;
+select Cod_art,descripcion,p_unidad,cantidad,total,Ticket from Detalle;
+select Cod_art,descripcion,p_unidad,cantidad,total,Ticket from Detalle;
+select P.descripcion,P.peso,P.simbpeso, PS.precio from Producto P inner join Producto_Sucursal PS on P.Cod_art = PS.Cod_art where P.Cod_art = 1 and PS.ID_scr = 123;
+*/
 
 /*Drops*/
 
@@ -216,9 +227,9 @@ drop table Empleado;
 drop table Categoria;
 drop table Producto_Sucursal;
 drop table Detalle;
+drop table Venta;
 drop table Sucursal;
 drop table Producto;
 drop table Proveedor;
-drop table Venta;
 drop table ModoPago;
 */
